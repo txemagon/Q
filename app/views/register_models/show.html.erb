@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @register_model.name %>
+</p>
+
+<p>
+  <strong>Explanation:</strong>
+  <%= @register_model.explanation %>
+</p>
+
+<%= link_to 'Edit', edit_register_model_path(@register_model) %> |
+<%= link_to 'Back', register_models_path %>
