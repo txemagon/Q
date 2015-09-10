@@ -69,6 +69,6 @@ class RegisterModelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_model_params
-      params.require(:register_model).permit(:name, :explanation)
+      params.require(:register_model).permit(:name, :explanation, :document)
     end
 end

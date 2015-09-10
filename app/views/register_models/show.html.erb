@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @register_model.name %>
-</p>
+<h2>
+  <%= link_to image_tag('word16.png', :alt => @register_model.name) + 
+              @register_model.name, 
+              @register_model.document.url %>
+  
+</h2>
 
+
+<h3>Explanation</h3>
 <p>
-  <strong>Explanation:</strong>
   <%= @register_model.explanation %>
 </p>
+
+<h3>Older Versions</h3>
+
+<% @register_model.versions.each do |version| %>
+   <%= link_to "#{@register_model.name} v#{version.id}.", 
+               version.reify.document.url %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_register_model_path(@register_model) %> |
 <%= link_to 'Back', register_models_path %>
