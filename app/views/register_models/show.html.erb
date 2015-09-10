@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h2>
-  <%= link_to image_tag('word16.png', :alt => @register_model.name) +
-              @register_model.name,
+  <%= link_to @register_model.name,
+              @register_model.document.url %>
+</h2>
+
+<%= link_to image_tag('word64.png', :alt => @register_model.name),
               @register_model.document.url %>
 
-</h2>
+
 
 
 <h3>Explanation</h3>
@@ -14,17 +17,27 @@
 </p>
 
 <h3>Older Versions</h3>
-<p>
-<% @register_model.versions.reverse.each do |version| %>
-   <% if version.reify %>
-      <%=  link_to "#{@register_model.name} v#{version.index}",
-                    version.reify.document.url %><br/>
-   <% else %>
-      <%=  link_to_first_version version %><br/>
-   <% end %>
+<table>
+    <thead>
+    	<td>File</td>
+    	<td>Operated</td>
+    	<td>Author</td>
+    </thead>
+	<% @register_model.versions.reverse.each do |version| %>
+		<tr>
+		   <% if version.reify %>
+		   <td>
+		      <%=  link_to "#{@register_model.name} v#{version.index}",
+		                    version.reify.document.url %>
+		   </td>
+		   <td><%= version.created_at.to_s(:long) %></td>
+		   <td><%= version.whodunnit %></td>
+		  <% end %>
+		</tr>
+	<% end %>
+</table>
 
-<% end %>
-</p>
+<p>Initial version: <%=  link_to_first_version @register_model %></p>
 
 <%= link_to 'Edit', edit_register_model_path(@register_model) %> |
 <%= link_to 'Back', register_models_path %>

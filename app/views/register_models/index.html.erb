@@ -6,7 +6,9 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Ver</th>
       <th>Explanation</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,7 +16,12 @@
   <tbody>
     <% @register_models.each do |register_model| %>
       <tr>
-        <td><%= register_model.name %></td>
+        <td>
+            <%= link_to image_tag('word16.png') + " " + register_model.name,
+                        register_model.document.url %>
+        <td>
+            v<%= register_model.versions.count - 1%>
+        </td>
         <td><%= register_model.explanation %></td>
         <td><%= link_to 'Show', register_model %></td>
         <td><%= link_to 'Edit', edit_register_model_path(register_model) %></td>
