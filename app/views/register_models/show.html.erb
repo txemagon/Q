@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h2>
-  <%= link_to image_tag('word16.png', :alt => @register_model.name) + 
-              @register_model.name, 
+  <%= link_to image_tag('word16.png', :alt => @register_model.name) +
+              @register_model.name,
               @register_model.document.url %>
-  
+
 </h2>
 
 
@@ -14,12 +14,17 @@
 </p>
 
 <h3>Older Versions</h3>
+<p>
+<% @register_model.versions.reverse.each do |version| %>
+   <% if version.reify %>
+      <%=  link_to "#{@register_model.name} v#{version.index}",
+                    version.reify.document.url %><br/>
+   <% else %>
+      <%=  link_to_first_version version %><br/>
+   <% end %>
 
-<% @register_model.versions.each do |version| %>
-   <%= link_to "#{@register_model.name} v#{version.id}.", 
-               version.reify.document.url %>
 <% end %>
-
+</p>
 
 <%= link_to 'Edit', edit_register_model_path(@register_model) %> |
 <%= link_to 'Back', register_models_path %>
