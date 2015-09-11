@@ -9,10 +9,20 @@
 
 require 'highline/import'
 
-password = ask("Enter RAC password: ") { |q| q.echo = false}
+
+
+firstname = ask("Enter admin name: ") { |q| q.default = 'Txema'}
+lastname  = ask("Surname: ") { |q| q.default = 'Gon'}
+email     = ask("Email address from @salesianosdosa.com: ")
+password  = ask("Enter RAC password: ") { |q| q.echo = false}
 password_confirmation = ask("Confirm RAC password: ") { |q| q.echo = false}
 
-Rac.create( 
-	:email => 'txema.gonz@gmail.com', 
-	:password => password, 
-	:password_confirmation => password_confirmation )
+raise "Passwords doesn't match." unless password == password_confirmation
+
+User.create!(
+	:first_name => firstname,
+	:last_name  => lastname,
+	:email    => email,
+	:password => password,
+	:password_confirmation => password_confirmation,
+	:rac => true )

@@ -1,0 +1,11 @@
+development:
+	GMAIL_DOMAIN: localhost
+
+production:
+	GMAIL_DOMAIN: localhost
+
+global:
+	GMAIL_USERNAME: racdosa@gmail.com
+	GMAIL_PASSWORD: callefour
+	GOOGLE_ID: 376345038498-enf25ph2ri5qf3lmipuqs09uo4iapcqk.apps.googleusercontent.com
+	GOOGLE_SECRET: FvDYrll3phPDNMWu3kiaqPvH
