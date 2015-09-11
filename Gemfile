@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
 gem "paperclip", "~> 4.3"
 gem 'paper_trail', '~> 4.0.0'
 
@@ -38,6 +39,7 @@ gem 'paper_trail', '~> 4.0.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'highline'
 end
 
 group :development do

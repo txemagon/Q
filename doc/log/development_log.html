@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>development.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../LICENSE.html">LICENSE</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../README_rdoc.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../app/assets/javascripts/register_models_coffee.html">register_models.coffee</a>
+  
+    <li><a href="../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../app/assets/stylesheets/register_models_scss.html">register_models.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/scaffolds_scss.html">scaffolds.scss</a>
+  
+    <li><a href="../app/views/register_models/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../app/views/register_models/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../public/404_html.html">404.html</a>
+  
+    <li><a href="../public/422_html.html">422.html</a>
+  
+    <li><a href="../public/500_html.html">500.html</a>
+  
+    <li><a href="../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+    <li><a href="../tmp/pids/server_pid.html">server.pid</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/development.log">
+
+<pre>[1m[36m (123.6ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (0.1ms)[0m  select sqlite_version(*)
+[1m[36m (124.8ms)[0m  [1mCREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)[0m
+[1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;</pre>
+
+<p>Migrating to <a
+href="../CreateRegisterModels.html">CreateRegisterModels</a>
+(20150908115834)</p>
+
+<pre>[1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+[1m[35m (0.2ms)[0m  CREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL) 
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20150908115834&quot;]]
+[1m[35m (108.3ms)[0m  commit transaction
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a
+href="../AddDocumentToRegisterModel.html">AddDocumentToRegisterModel</a>
+(20150909101748)</p>
+
+<pre>[1m[35m (0.0ms)[0m  begin transaction
+[1m[36m (0.2ms)[0m  [1mALTER TABLE &quot;register_models&quot; ADD &quot;document_file_name&quot; varchar[0m
+[1m[35m (0.1ms)[0m  ALTER TABLE &quot;register_models&quot; ADD &quot;document_content_type&quot; varchar
+[1m[36m (0.1ms)[0m  [1mALTER TABLE &quot;register_models&quot; ADD &quot;document_file_size&quot; integer[0m
+[1m[35m (0.1ms)[0m  ALTER TABLE &quot;register_models&quot; ADD &quot;document_updated_at&quot; datetime
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20150909101748&quot;]]
+[1m[35m (120.9ms)[0m  commit transaction
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Started GET “/” for 127.0.0.1 at 2015-09-09 12:32:40 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by Rails::WelcomeController#index as HTML</p>
+
+<pre>Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)</pre>
+
+<p>Completed 200 OK in 75ms (Views: 49.5ms | ActiveRecord: 0.0ms) DEPRECATION
+WARNING: Defining a route where `to` is a controller without an action is
+deprecated. Please change `to: &#39;register_models@show&#39;` to
+`controller: &#39;register_models@show&#39;`. (called from block in &lt;top
+(required)&gt; at /home/txema/work/Q/config/routes.rb:4)</p>
+
+<p>Started GET “/” for 127.0.0.1 at 2015-09-09 12:37:24 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.1ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+Rendered register_models/index.html.erb within layouts/application (2.1ms)</pre>
+
+<p>Completed 200 OK in 914ms (Views: 899.9ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:37:25 +0200</p>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-09 12:37:50
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (93.6ms)
+Rendered register_models/new.html.erb within layouts/application (109.5ms)</pre>
+
+<p>Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.3ms)</p>
+
+<p>ActionView::Template::Error (undefined local variable or method `form&#39;
+for #&lt;#&lt;Class:0x007fdb6418f528&gt;:0x007fdb6418eb00&gt;):</p>
+
+<pre>  20:     &lt;%= f.text_area :explanation %&gt;
+  21:   &lt;/div&gt;
+  22:   &lt;div class=&quot;field&quot;&gt;
+  23:     &lt;%= form.file_field :avatar %&gt;
+  24:   &lt;/div&gt;
+  25:   &lt;div class=&quot;actions&quot;&gt;
+  26:     &lt;%= f.submit %&gt;
+app/views/register_models/_form.html.erb:23:in `block in _app_views_register_models__form_html_erb___4060746555523369698_70290236777860&#39;
+app/views/register_models/_form.html.erb:1:in `_app_views_register_models__form_html_erb___4060746555523369698_70290236777860&#39;
+app/views/register_models/new.html.erb:3:in `_app_views_register_models_new_html_erb___2794887924407934094_70290126957620&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.4ms)</pre>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-09 12:37:50
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (9.2ms)
+Rendered register_models/new.html.erb within layouts/application (10.2ms)</pre>
+
+<p>Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)</p>
+
+<p>ActionView::Template::Error (undefined local variable or method `form&#39;
+for #&lt;#&lt;Class:0x007fdb6418f528&gt;:0x007fdb6491d290&gt;):</p>
+
+<pre>  20:     &lt;%= f.text_area :explanation %&gt;
+  21:   &lt;/div&gt;
+  22:   &lt;div class=&quot;field&quot;&gt;
+  23:     &lt;%= form.file_field :avatar %&gt;
+  24:   &lt;/div&gt;
+  25:   &lt;div class=&quot;actions&quot;&gt;
+  26:     &lt;%= f.submit %&gt;
+app/views/register_models/_form.html.erb:23:in `block in _app_views_register_models__form_html_erb___4060746555523369698_70290130858680&#39;
+app/views/register_models/_form.html.erb:1:in `_app_views_register_models__form_html_erb___4060746555523369698_70290130858680&#39;
+app/views/register_models/new.html.erb:3:in `_app_views_register_models_new_html_erb___2794887924407934094_70290130919520&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.7ms)</pre>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-09 12:38:24
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (14.0ms)
+Rendered register_models/new.html.erb within layouts/application (14.4ms)</pre>
+
+<p>Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)</p>
+
+<p>ActionView::Template::Error (undefined local variable or method `form&#39;
+for #&lt;#&lt;Class:0x007fdb6418f528&gt;:0x007fdb64d39428&gt;):</p>
+
+<pre>  20:     &lt;%= f.text_area :explanation %&gt;
+  21:   &lt;/div&gt;
+  22:   &lt;div class=&quot;field&quot;&gt;
+  23:     &lt;%= form.file_field :document %&gt;
+  24:   &lt;/div&gt;
+  25:   &lt;div class=&quot;actions&quot;&gt;
+  26:     &lt;%= f.submit %&gt;
+app/views/register_models/_form.html.erb:23:in `block in _app_views_register_models__form_html_erb___4060746555523369698_70290133140960&#39;
+app/views/register_models/_form.html.erb:1:in `_app_views_register_models__form_html_erb___4060746555523369698_70290133140960&#39;
+app/views/register_models/new.html.erb:3:in `_app_views_register_models_new_html_erb___2794887924407934094_70290130919520&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.4ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.0ms)</pre>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-09 12:38:40
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (14.1ms)
+Rendered register_models/new.html.erb within layouts/application (14.9ms)</pre>
+
+<p>Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-09 12:38:40 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateVersions.html">CreateVersions</a>
+(20150910080205)</p>
+
+<pre>[1m[35m (0.0ms)[0m  begin transaction
+[1m[36m (0.2ms)[0m  [1mCREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) [0m
+[1m[35m (0.0ms)[0m  select sqlite_version(*)
+[1m[36m (0.1ms)[0m  [1mCREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)[0m
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)  [[&quot;version&quot;, &quot;20150910080205&quot;]]
+[1m[36m (108.2ms)[0m  [1mcommit transaction[0m
+[1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;
+[1m[36m (0.2ms)[0m  [1m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 10:57:59 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;Ep32TVa7KIt0IwRhUeuppyaWk9WMB3R92j2yUkHFdBQWSr/1Ly4VrzLRle5yPNWgqXM5ZYBANwJ03+6qmfR88g==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Tienen que ser las que hay en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x000000042be428 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-7283-1kbtdlf.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+
+<p>Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.3ms)</p>
+
+<p>Paperclip::Errors::MissingRequiredValidatorError
+(Paperclip::Errors::MissingRequiredValidatorError):</p>
+
+<pre>app/controllers/register_models_controller.rb:27:in `create&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.6ms)</pre>
+
+<p>Cannot render console with content type multipart/form-dataAllowed content
+types: [#&lt;Mime::Type:0x00000003662260 @<a
+href=""application/xhtml+xml"">synonyms=</a>, @symbol=:html,
+@string=“text/html”&gt;, #&lt;Mime::Type:0x00000003661f68 @synonyms=[],
+@symbol=:text, @string=“text/plain”&gt;, #&lt;Mime::Type:0x0000000365eb88
+@synonyms=[], @symbol=:url_encoded_form,
+@string=“application/x-www-form-urlencoded”&gt;]</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 11:13:27 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;Ep32TVa7KIt0IwRhUeuppyaWk9WMB3R92j2yUkHFdBQWSr/1Ly4VrzLRle5yPNWgqXM5ZYBANwJ03+6qmfR88g==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Tienen que ser las que hay en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x000000033c7398 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-7429-b88wga.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-7429-1h37e7b.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35m (0.1ms)[0m  begin transaction</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-7429-1azco7y.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36mRegisterModel Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1[0m
+[1m[35mSQL (13.3ms)[0m  INSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Tienen que ser las que hay en horario lectivo&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 09:13:27.213997&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:13:27.343955&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 09:13:27.343955&quot;]]
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:13:27.343955&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35m (125.0ms)[0m  commit transaction</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 345ms (ActiveRecord: 139.5ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:13:27 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.3ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.2ms)</pre>
+
+<p>Completed 200 OK in 311ms (Views: 297.1ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:27 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.9ms)</pre>
+
+<p>Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:18:27 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:30 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.2ms)</pre>
+
+<p>Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:48 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.3ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.6ms)</pre>
+
+<p>Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:48 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.8ms)</pre>
+
+<p>Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:51 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.5ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:51 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.4ms)</pre>
+
+<p>Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:18:51 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.5ms)</pre>
+
+<p>Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:21:15 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.0ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 21.6ms | ActiveRecord: 0.5ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:21:15 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:21:23 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.6ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.1ms)</p>
+
+<pre>[1m[36m (106.5ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (0.2ms)[0m  select sqlite_version(*)
+[1m[36m (99.4ms)[0m  [1mCREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)[0m
+[1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;</pre>
+
+<p>Migrating to <a
+href="../CreateRegisterModels.html">CreateRegisterModels</a>
+(20150908115834)</p>
+
+<pre>[1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+[1m[35m (0.2ms)[0m  CREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL) 
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20150908115834&quot;]]
+[1m[35m (134.5ms)[0m  commit transaction</pre>
+
+<p>Migrating to <a
+href="../AddDocumentToRegisterModel.html">AddDocumentToRegisterModel</a>
+(20150909101748)</p>
+
+<pre>[1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+[1m[35m (0.2ms)[0m  ALTER TABLE &quot;register_models&quot; ADD &quot;document_file_name&quot; varchar
+[1m[36m (0.1ms)[0m  [1mALTER TABLE &quot;register_models&quot; ADD &quot;document_content_type&quot; varchar[0m
+[1m[35m (0.1ms)[0m  ALTER TABLE &quot;register_models&quot; ADD &quot;document_file_size&quot; integer
+[1m[36m (0.1ms)[0m  [1mALTER TABLE &quot;register_models&quot; ADD &quot;document_updated_at&quot; datetime[0m
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)  [[&quot;version&quot;, &quot;20150909101748&quot;]]
+[1m[36m (132.1ms)[0m  [1mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateVersions.html">CreateVersions</a>
+(20150910080205)</p>
+
+<pre>[1m[35m (0.1ms)[0m  begin transaction
+[1m[36m (0.4ms)[0m  [1mCREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) [0m
+[1m[35m (0.2ms)[0m  CREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20150910080205&quot;]]
+[1m[35m (138.9ms)[0m  commit transaction
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m              SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;</pre>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 11:23:13 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.1ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+Rendered register_models/index.html.erb within layouts/application (2.0ms)</pre>
+
+<p>Completed 200 OK in 193ms (Views: 175.7ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-10 11:23:15
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (12.1ms)
+Rendered register_models/new.html.erb within layouts/application (16.2ms)</pre>
+
+<p>Completed 200 OK in 47ms (Views: 36.8ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 11:23:36 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;+tXYRNjDUhqfg2MnYnrrHubn3fL+P6uHKRakAGjG+zj+ApH8oVZvPtlx8qhBrZcZaQJ3QvJ46PiH9Pj4sPfz3g==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Solo en horario de clase&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x000000010128f8 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-7710-1wk4kri.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-7710-1jc7fcs.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36m (0.1ms)[0m  [1mbegin transaction[0m</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-7710-1ipx17n.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Solo en horario de clase&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 09:23:36.243320&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:23:36.274873&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 09:23:36.274873&quot;]]
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:23:36.274873&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (190.2ms)[0m  [1mcommit transaction[0m</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 242ms (ActiveRecord: 191.0ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:23:36 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.2ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (3.3ms)</pre>
+
+<p>Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:23:42 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (2.2ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:23:52 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (0.7ms)</pre>
+
+<p>Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 11:23:53 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 11:28:33 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (3.7ms)</pre>
+
+<p>Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)</p>
+
+<p>ActionView::Template::Error (undefined method `version&#39; for
+#&lt;Paperclip::Attachment:0x007efecc26e590&gt;):</p>
+
+<pre>  12: 
+  13: &lt;p&gt;
+  14:   &lt;strong&gt;File:&lt;/strong&gt;
+  15:   &lt;%= link_to &quot;file&quot;, @register_model.document.url %&gt;
+  16: &lt;/p&gt;
+  17: 
+  18: &lt;%= link_to &#39;Edit&#39;, edit_register_model_path(@register_model) %&gt; |
+app/models/register_model.rb:22:in `block in &lt;class:RegisterModel&gt;&#39;
+app/views/register_models/show.html.erb:15:in `_app_views_register_models_show_html_erb__1224948087758541011_69816405893180&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (21.1ms)
+[1m[36m (123.8ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (0.1ms)[0m  select sqlite_version(*)
+[1m[36m (108.0ms)[0m  [1mCREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)[0m
+[1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;</pre>
+
+<p>Migrating to <a
+href="../CreateRegisterModels.html">CreateRegisterModels</a>
+(20150908115834)</p>
+
+<pre>[1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+[1m[35m (0.2ms)[0m  CREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL) 
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20150908115834&quot;]]
+[1m[35m (163.3ms)[0m  commit transaction</pre>
+
+<p>Migrating to <a
+href="../AddDocumentToRegisterModel.html">AddDocumentToRegisterModel</a>
+(20150909101748)</p>
+
+<pre>[1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+[1m[35m (0.4ms)[0m  ALTER TABLE &quot;register_models&quot; ADD &quot;document_file_name&quot; varchar
+[1m[36m (0.2ms)[0m  [1mALTER TABLE &quot;register_models&quot; ADD &quot;document_content_type&quot; varchar[0m
+[1m[35m (0.3ms)[0m  ALTER TABLE &quot;register_models&quot; ADD &quot;document_file_size&quot; integer
+[1m[36m (0.2ms)[0m  [1mALTER TABLE &quot;register_models&quot; ADD &quot;document_updated_at&quot; datetime[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)  [[&quot;version&quot;, &quot;20150909101748&quot;]]
+[1m[36m (146.4ms)[0m  [1mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateVersions.html">CreateVersions</a>
+(20150910080205)</p>
+
+<pre>[1m[35m (0.1ms)[0m  begin transaction
+[1m[36m (0.4ms)[0m  [1mCREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) [0m
+[1m[35m (0.2ms)[0m  CREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20150910080205&quot;]]
+[1m[35m (146.8ms)[0m  commit transaction
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.2ms)[0m              SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;</pre>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 11:29:31 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.1ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+Rendered register_models/index.html.erb within layouts/application (2.4ms)</pre>
+
+<p>Completed 200 OK in 196ms (Views: 178.4ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-10 11:29:33
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (12.2ms)
+Rendered register_models/new.html.erb within layouts/application (14.2ms)</pre>
+
+<p>Completed 200 OK in 42ms (Views: 34.2ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 11:29:53 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;fz2svQnPM3bLRfRzlOn00XrpiwdBqARCt1g1O/whw7d76uUFcFoOUo23Zfy3PojW9Qwht03vRz0ZumnDJBDLUQ==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Solo en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x00000002bd81c8 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8194-1mk0am8.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8194-v18v5j.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36m (0.1ms)[0m  [1mbegin transaction[0m</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8194-14mbhdt.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Solo en horario lectivo&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 09:29:53.648752&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:29:53.742629&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 09:29:53.742629&quot;]]
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:29:53.742629&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]</pre>
+
+<p>Completed 500 Internal Server Error in 113ms (ActiveRecord: 1.5ms)</p>
+
+<p>NoMethodError (undefined method `version&#39; for
+#&lt;Paperclip::Attachment:0x00000003487bc0&gt;):</p>
+
+<pre>app/models/register_model.rb:22:in `block in &lt;class:RegisterModel&gt;&#39;
+app/controllers/register_models_controller.rb:30:in `block in create&#39;
+app/controllers/register_models_controller.rb:29:in `create&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.6ms)</pre>
+
+<p>Cannot render console with content type multipart/form-dataAllowed content
+types: [#&lt;Mime::Type:0x000000044f6dd0 @<a
+href=""application/xhtml+xml"">synonyms=</a>, @symbol=:html,
+@string=“text/html”&gt;, #&lt;Mime::Type:0x000000044f6ab0 @synonyms=[],
+@symbol=:text, @string=“text/plain”&gt;, #&lt;Mime::Type:0x000000044ef8f0
+@synonyms=[], @symbol=:url_encoded_form,
+@string=“application/x-www-form-urlencoded”&gt;]</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 11:30:49 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;fz2svQnPM3bLRfRzlOn00XrpiwdBqARCt1g1O/whw7d76uUFcFoOUo23Zfy3PojW9Qwht03vRz0ZumnDJBDLUQ==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Solo en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x007f3a2a4de2c8 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8194-134qzsa.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8194-ukdo7m.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36m (0.1ms)[0m  [1mbegin transaction[0m</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8194-1kwz04f.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Solo en horario lectivo&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 09:30:49.710168&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:30:49.718577&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 09:30:49.718577&quot;]]
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 09:30:49.718577&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]</pre>
+
+<p>Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.3ms)</p>
+
+<p>NoMethodError (undefined method `version&#39; for
+#&lt;Paperclip::Attachment:0x007f3a2a5892e0&gt;):</p>
+
+<pre>app/models/register_model.rb:22:in `block in &lt;class:RegisterModel&gt;&#39;
+app/controllers/register_models_controller.rb:30:in `block in create&#39;
+app/controllers/register_models_controller.rb:29:in `create&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)</pre>
+
+<p>Cannot render console with content type multipart/form-dataAllowed content
+types: [#&lt;Mime::Type:0x000000044f6dd0 @<a
+href=""application/xhtml+xml"">synonyms=</a>, @symbol=:html,
+@string=“text/html”&gt;, #&lt;Mime::Type:0x000000044f6ab0 @synonyms=[],
+@symbol=:text, @string=“text/plain”&gt;, #&lt;Mime::Type:0x000000044ef8f0
+@synonyms=[], @symbol=:url_encoded_form,
+@string=“application/x-www-form-urlencoded”&gt;]</p>
+
+<pre>[1m[36m (130.2ms)[0m  [1mCREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL, &quot;document_file_name&quot; varchar, &quot;document_content_type&quot; varchar, &quot;document_file_size&quot; integer, &quot;document_updated_at&quot; datetime) [0m
+[1m[35m (133.4ms)[0m  CREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) 
+[1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+[1m[35m (134.1ms)[0m  CREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)
+[1m[36m (132.8ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (158.7ms)[0m  CREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)
+[1m[36m (0.1ms)[0m  [1mSELECT version FROM &quot;schema_migrations&quot;[0m
+[1m[35m (133.8ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150910080205&#39;)
+[1m[36m (109.0ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150909101748&#39;)[0m
+[1m[35m (109.0ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150908115834&#39;)
+[1m[36m (124.1ms)[0m  [1mCREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL, &quot;document_file_name&quot; varchar, &quot;document_content_type&quot; varchar, &quot;document_file_size&quot; integer, &quot;document_updated_at&quot; datetime) [0m
+[1m[35m (141.7ms)[0m  CREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) 
+[1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+[1m[35m (158.3ms)[0m  CREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)
+[1m[36m (159.0ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (143.4ms)[0m  CREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)
+[1m[36m (0.1ms)[0m  [1mSELECT version FROM &quot;schema_migrations&quot;[0m
+[1m[35m (167.4ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150910080205&#39;)
+[1m[36m (142.3ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150909101748&#39;)[0m
+[1m[35m (134.0ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150908115834&#39;)
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Started GET “/” for 127.0.0.1 at 2015-09-10 13:17:10 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.1ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+Rendered register_models/index.html.erb within layouts/application (2.4ms)</pre>
+
+<p>Completed 200 OK in 191ms (Views: 174.1ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-10 13:17:13
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (12.0ms)
+Rendered register_models/new.html.erb within layouts/application (15.4ms)</pre>
+
+<p>Completed 200 OK in 46ms (Views: 36.1ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 13:17:37 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;2eEI8JESYYBAjhEZ4RG1m8iLS6/OlV2exkcVXQS3kfvdNkFI6IdcpAZ8gJbCxsmcR27hH8LSHuFopUml3IaZHQ==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Solo Horario de clase&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x007f9649e4bb28 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8404-1qif3g5.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8404-rtshfr.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36m (0.1ms)[0m  [1mbegin transaction[0m</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8404-1y5iikn.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Solo Horario de clase&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 11:17:37.617448&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:17:37.635302&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:17:37.635302&quot;]]
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:17:37.635302&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]</pre>
+
+<p>Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms)</p>
+
+<p>NoMethodError (undefined method `id&#39; for nil:NilClass):</p>
+
+<pre>app/models/register_model.rb:22:in `block in &lt;class:RegisterModel&gt;&#39;
+app/controllers/register_models_controller.rb:30:in `block in create&#39;
+app/controllers/register_models_controller.rb:29:in `create&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)</pre>
+
+<p>Cannot render console with content type multipart/form-dataAllowed content
+types: [#&lt;Mime::Type:0x000000028be208 @<a
+href=""application/xhtml+xml"">synonyms=</a>, @symbol=:html,
+@string=“text/html”&gt;, #&lt;Mime::Type:0x000000028bd9e8 @synonyms=[],
+@symbol=:text, @string=“text/plain”&gt;, #&lt;Mime::Type:0x000000028b05e0
+@synonyms=[], @symbol=:url_encoded_form,
+@string=“application/x-www-form-urlencoded”&gt;]</p>
+
+<p>Started GET “/” for 127.0.0.1 at 2015-09-10 13:18:02 +0200 Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;[0m
+Rendered register_models/index.html.erb within layouts/application (0.5ms)</pre>
+
+<p>Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-10 13:18:04
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (2.5ms)
+Rendered register_models/new.html.erb within layouts/application (3.3ms)</pre>
+
+<p>Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 13:19:06 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;Cp3hj0e/5JfYBpLvuQeqpZfQQkQ4uKrzSrtBA9VfBMsOSqg3PirZs570A2Ca0NaiGDXo9DT/6YzkWR37DW4MLQ==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Solo Horario de clase&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x007f964a17c900 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8404-108le8y.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8404-19fcg2a.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35m (0.1ms)[0m  begin transaction</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8404-1ow73s2.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36mRegisterModel Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1[0m
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Solo Horario de clase&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 11:19:06.195186&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:19:06.202652&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:19:06.202652&quot;]]
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:19:06.202652&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35m (267.2ms)[0m  commit transaction</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 303ms (ActiveRecord: 268.6ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:19:06 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.5ms)</pre>
+
+<p>Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET
+“/assets/register_models/documents/PUNTUACI%C3%93N_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D_v1.doc?1441883946”
+for 127.0.0.1 at 2015-09-10 13:19:13 +0200</p>
+
+<p>ActionController::RoutingError (No route matches [GET]
+“/assets/register_models/documents/PUNTUACI%C3%93N_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D_v1.doc”):</p>
+
+<pre>actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call&#39;
+web-console (2.2.1) lib/web_console/middleware.rb:39:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:20:in `call&#39;
+request_store (1.2.0) lib/request_store/middleware.rb:8:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call&#39;
+rack (1.6.4) lib/rack/methodoverride.rb:22:in `call&#39;
+rack (1.6.4) lib/rack/runtime.rb:18:in `call&#39;
+activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call&#39;
+rack (1.6.4) lib/rack/lock.rb:17:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call&#39;
+rack (1.6.4) lib/rack/sendfile.rb:113:in `call&#39;
+railties (4.2.4) lib/rails/engine.rb:518:in `call&#39;
+railties (4.2.4) lib/rails/application.rb:165:in `call&#39;
+rack (1.6.4) lib/rack/lock.rb:17:in `call&#39;
+rack (1.6.4) lib/rack/content_length.rb:15:in `call&#39;
+rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (57.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.8ms)</pre>
+
+<p>Started GET
+“/register_models/documents/PUNTUACI%C3%93N_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D_v1.doc?1441883946”
+for 127.0.0.1 at 2015-09-10 13:19:49 +0200</p>
+
+<p>ActionController::RoutingError (No route matches [GET]
+“/register_models/documents/PUNTUACI%C3%93N_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D_v1.doc”):</p>
+
+<pre>actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call&#39;
+web-console (2.2.1) lib/web_console/middleware.rb:39:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:20:in `call&#39;
+request_store (1.2.0) lib/request_store/middleware.rb:8:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call&#39;
+rack (1.6.4) lib/rack/methodoverride.rb:22:in `call&#39;
+rack (1.6.4) lib/rack/runtime.rb:18:in `call&#39;
+activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call&#39;
+rack (1.6.4) lib/rack/lock.rb:17:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call&#39;
+rack (1.6.4) lib/rack/sendfile.rb:113:in `call&#39;
+railties (4.2.4) lib/rails/engine.rb:518:in `call&#39;
+railties (4.2.4) lib/rails/application.rb:165:in `call&#39;
+rack (1.6.4) lib/rack/lock.rb:17:in `call&#39;
+rack (1.6.4) lib/rack/content_length.rb:15:in `call&#39;
+rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (9.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (19.6ms)</pre>
+
+<p>Started GET
+“/public/system/register_models/documents/PUNTUACI%C3%93N_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D_v1.doc?1441883946”
+for 127.0.0.1 at 2015-09-10 13:20:19 +0200</p>
+
+<p>ActionController::RoutingError (No route matches [GET]
+“/public/system/register_models/documents/PUNTUACI%C3%93N_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D_v1.doc”):</p>
+
+<pre>actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call&#39;
+web-console (2.2.1) lib/web_console/middleware.rb:39:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged&#39;
+activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged&#39;
+railties (4.2.4) lib/rails/rack/logger.rb:20:in `call&#39;
+request_store (1.2.0) lib/request_store/middleware.rb:8:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call&#39;
+rack (1.6.4) lib/rack/methodoverride.rb:22:in `call&#39;
+rack (1.6.4) lib/rack/runtime.rb:18:in `call&#39;
+activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call&#39;
+rack (1.6.4) lib/rack/lock.rb:17:in `call&#39;
+actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call&#39;
+rack (1.6.4) lib/rack/sendfile.rb:113:in `call&#39;
+railties (4.2.4) lib/rails/engine.rb:518:in `call&#39;
+railties (4.2.4) lib/rails/application.rb:165:in `call&#39;
+rack (1.6.4) lib/rack/lock.rb:17:in `call&#39;
+rack (1.6.4) lib/rack/content_length.rb:15:in `call&#39;
+rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run&#39;
+/home/txema/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.4ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.0ms)
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot;  ORDER BY &quot;register_models&quot;.&quot;id&quot; ASC LIMIT 1[0m</pre>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 13:22:36 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.2ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+Rendered register_models/index.html.erb within layouts/application (5.3ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.5ms)</p>
+
+<p>Started GET “/register_models/1/edit” for 127.0.0.1 at 2015-09-10 13:22:39
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-edit">RegisterModelsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/_form.html.erb (2.9ms)
+Rendered register_models/edit.html.erb within layouts/application (4.2ms)</pre>
+
+<p>Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started PATCH “/register_models/1” for 127.0.0.1 at 2015-09-10 13:22:43
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-update">RegisterModelsController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;s6KdnZIDIuyGViTGr4O3CvpDdIZiaEIAvWsXenKUEEu3ddQl65YfyMCktUmMVMsNdabeNm4vAX8TiUuCqqUYrQ==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias 2&quot;, &quot;explanation&quot;=&gt;&quot;Solo Horario de clase&quot;}, &quot;commit&quot;=&gt;&quot;Update Register model&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE (&quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias 2&#39; AND &quot;register_models&quot;.&quot;id&quot; != 1) LIMIT 1
+[1m[36mSQL (0.2ms)[0m  [1mUPDATE &quot;register_models&quot; SET &quot;name&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;register_models&quot;.&quot;id&quot; = ?[0m  [[&quot;name&quot;, &quot;Salidas Complementarias 2&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:22:43.681042&quot;], [&quot;id&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;object&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?, ?)  [[&quot;event&quot;, &quot;update&quot;], [&quot;object&quot;, &quot;---\nid: 1\nname: Salidas Complementarias\nexplanation: Solo Horario de clase\ncreated_at: 2015-09-10 11:19:06.202652000 Z\nupdated_at: 2015-09-10 11:19:06.202652000 Z\ndocument_file_name: PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc\ndocument_content_type: application/msword\ndocument_file_size: 13824\ndocument_updated_at: 2015-09-10 11:19:06.195186000 Z\n&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:22:43.681042&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (177.5ms)[0m  [1mcommit transaction[0m</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 294ms (ActiveRecord: 178.4ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:22:43 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (0.6ms)</pre>
+
+<p>Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.1ms)</p>
+
+<pre>[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (101.2ms)[0m  [1mCREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL, &quot;document_file_name&quot; varchar, &quot;document_content_type&quot; varchar, &quot;document_file_size&quot; integer, &quot;document_updated_at&quot; datetime) [0m
+[1m[35m (133.2ms)[0m  CREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) 
+[1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+[1m[35m (156.2ms)[0m  CREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)
+[1m[36m (162.7ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (141.8ms)[0m  CREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)
+[1m[36m (0.1ms)[0m  [1mSELECT version FROM &quot;schema_migrations&quot;[0m
+[1m[35m (158.7ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150910080205&#39;)
+[1m[36m (133.9ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150909101748&#39;)[0m
+[1m[35m (117.3ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150908115834&#39;)
+[1m[36m (116.8ms)[0m  [1mCREATE TABLE &quot;register_models&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;name&quot; varchar, &quot;explanation&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL, &quot;document_file_name&quot; varchar, &quot;document_content_type&quot; varchar, &quot;document_file_size&quot; integer, &quot;document_updated_at&quot; datetime) [0m
+[1m[35m (133.5ms)[0m  CREATE TABLE &quot;versions&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;item_type&quot; varchar NOT NULL, &quot;item_id&quot; integer NOT NULL, &quot;event&quot; varchar NOT NULL, &quot;whodunnit&quot; varchar, &quot;object&quot; text(1073741823), &quot;created_at&quot; datetime) 
+[1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+[1m[35m (108.0ms)[0m  CREATE  INDEX &quot;index_versions_on_item_type_and_item_id&quot; ON &quot;versions&quot; (&quot;item_type&quot;, &quot;item_id&quot;)
+[1m[36m (142.0ms)[0m  [1mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL) [0m
+[1m[35m (125.2ms)[0m  CREATE UNIQUE INDEX &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot; (&quot;version&quot;)
+[1m[36m (0.1ms)[0m  [1mSELECT version FROM &quot;schema_migrations&quot;[0m
+[1m[35m (143.2ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150910080205&#39;)
+[1m[36m (142.4ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150909101748&#39;)[0m
+[1m[35m (125.7ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20150908115834&#39;)
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 13:28:46 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;[0m
+Rendered register_models/index.html.erb within layouts/application (1.2ms)</pre>
+
+<p>Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET “/register_models/new” for 127.0.0.1 at 2015-09-10 13:28:50
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-new">RegisterModelsController#new</a>
+as HTML</p>
+
+<pre>Rendered register_models/_form.html.erb (1.3ms)
+Rendered register_models/new.html.erb within layouts/application (1.8ms)</pre>
+
+<p>Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started POST “/register_models” for 127.0.0.1 at 2015-09-10 13:29:16 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-create">RegisterModelsController#create</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;gKJ687yJfMe8ykDye9h3LKyqamtSD0tK9avBi3OdFEOEdTNLxRxB4/o40X1YDwsrI0/A215ICDVbSZ1zq6wcpQ==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias&quot;, &quot;explanation&quot;=&gt;&quot;Solo salidas complementarias en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x007f964a8ed978 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8404-avq38w.doc&gt;, @original_filename=&quot;PUNTUACIÓN FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;PUNTUACI\xC3\x93N FOTOS FINALISTAS DOMINGO SAVIO 2015 3D.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Create Register model&quot;}</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8404-hgm3ju.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35m (0.1ms)[0m  begin transaction</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/0c068730a508a418fa534e850b535aa020150910-8404-oxc4ph.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[36mRegisterModel Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias&#39; LIMIT 1[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;register_models&quot; (&quot;name&quot;, &quot;explanation&quot;, &quot;document_file_name&quot;, &quot;document_content_type&quot;, &quot;document_file_size&quot;, &quot;document_updated_at&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [[&quot;name&quot;, &quot;Salidas Complementarias&quot;], [&quot;explanation&quot;, &quot;Solo salidas complementarias en horario lectivo&quot;], [&quot;document_file_name&quot;, &quot;PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc&quot;], [&quot;document_content_type&quot;, &quot;application/msword&quot;], [&quot;document_file_size&quot;, 13824], [&quot;document_updated_at&quot;, &quot;2015-09-10 11:29:16.450125&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:29:16.456959&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:29:16.456959&quot;]]
+[1m[36mSQL (0.1ms)[0m  [1mINSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;event&quot;, &quot;create&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:29:16.456959&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mCACHE (0.0ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mCACHE (0.0ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (332.5ms)[0m  [1mcommit transaction[0m</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 354ms (ActiveRecord: 333.4ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:29:16 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (1.3ms)</pre>
+
+<p>Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/1/edit” for 127.0.0.1 at 2015-09-10 13:29:39
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-edit">RegisterModelsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/_form.html.erb (2.1ms)
+Rendered register_models/edit.html.erb within layouts/application (3.0ms)</pre>
+
+<p>Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started PATCH “/register_models/1” for 127.0.0.1 at 2015-09-10 13:29:47
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-update">RegisterModelsController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;F6PRdAxsYMklyEXdR8q5WpdBRHNXLPjYqSgaoWwNmgETdJjMdfld7WM61FJkHcVdGKTuw1tru6cHykZZtDyS5w==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias 2&quot;, &quot;explanation&quot;=&gt;&quot;Solo salidas complementarias en horario lectivo&quot;}, &quot;commit&quot;=&gt;&quot;Update Register model&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.1ms)[0m  begin transaction
+[1m[36mRegisterModel Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM &quot;register_models&quot; WHERE (&quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias 2&#39; AND &quot;register_models&quot;.&quot;id&quot; != 1) LIMIT 1[0m
+[1m[35mSQL (0.2ms)[0m  UPDATE &quot;register_models&quot; SET &quot;name&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;register_models&quot;.&quot;id&quot; = ?  [[&quot;name&quot;, &quot;Salidas Complementarias 2&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:29:47.252166&quot;], [&quot;id&quot;, 1]]
+[1m[36m (168.4ms)[0m  [1mcommit transaction[0m</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 173ms (ActiveRecord: 168.9ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:29:47 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (1.7ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.2ms)</p>
+
+<pre>[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot;  ORDER BY &quot;register_models&quot;.&quot;id&quot; ASC LIMIT 1[0m
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]</pre>
+
+<p>Started GET “/register_models/1/edit” for 127.0.0.1 at 2015-09-10 13:31:35
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-edit">RegisterModelsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.2ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/_form.html.erb (1.4ms)
+Rendered register_models/edit.html.erb within layouts/application (2.0ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 21.9ms | ActiveRecord: 0.5ms)</p>
+
+<p>Started PATCH “/register_models/1” for 127.0.0.1 at 2015-09-10 13:31:44
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-update">RegisterModelsController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;ePUend54Ok5jPGWHoyN0IOx31hmKFkL0TnojEWceu5l8Ilclp+0HaiXO9AiA9AgnY5J8qYZRAYvgmH/pvy+zfw==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias 2&quot;, &quot;explanation&quot;=&gt;&quot;Solo salidas complementarias en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x007f9649d87110 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8404-10q9xti.odt&gt;, @original_filename=&quot;viviendaJGB.odt&quot;, @content_type=&quot;application/vnd.oasis.opendocument.text&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;viviendaJGB.odt\&quot;\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Update Register model&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.0ms)[0m  begin transaction</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/4ef8d68f981d4d01b9b0aee7816f834520150910-8404-bbjy24.odt&#39;</p>
+</dd><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/4ef8d68f981d4d01b9b0aee7816f834520150910-8404-vtpqvu.odt&#39;</p>
+</dd></dl>
+
+<pre>[1m[36mRegisterModel Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM &quot;register_models&quot; WHERE (&quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias 2&#39; AND &quot;register_models&quot;.&quot;id&quot; != 1) LIMIT 1[0m
+[1m[35m (0.1ms)[0m  rollback transaction
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/_form.html.erb (3.4ms)
+Rendered register_models/edit.html.erb within layouts/application (4.2ms)</pre>
+
+<p>Completed 200 OK in 69ms (Views: 24.2ms | ActiveRecord: 0.7ms)</p>
+
+<p>Started PATCH “/register_models/1” for 127.0.0.1 at 2015-09-10 13:32:18
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-update">RegisterModelsController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;Wi/ymfmvf9W0N0xwi0vB9Y13gU7steRPA+mkhmHp9+Re+LshgDpC8fLF3f+onL3yApIr/uDypzCtC/h+udj/Ag==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias 2&quot;, &quot;explanation&quot;=&gt;&quot;Solo salidas complementarias en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x000000039f8ac8 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8404-1cf7418.doc&gt;, @original_filename=&quot;p.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;p.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Update Register model&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.0ms)[0m  [1mbegin transaction[0m</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/83878c91171338902e0fe0fb97a8c47a20150910-8404-6bbbc8.doc&#39;</p>
+</dd><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/83878c91171338902e0fe0fb97a8c47a20150910-8404-1fly7ph.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE (&quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias 2&#39; AND &quot;register_models&quot;.&quot;id&quot; != 1) LIMIT 1
+[1m[36mSQL (0.2ms)[0m  [1mUPDATE &quot;register_models&quot; SET &quot;document_file_name&quot; = ?, &quot;document_updated_at&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;register_models&quot;.&quot;id&quot; = ?[0m  [[&quot;document_file_name&quot;, &quot;p.doc&quot;], [&quot;document_updated_at&quot;, &quot;2015-09-10 11:32:18.670311&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:32:18.675469&quot;], [&quot;id&quot;, 1]]
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;object&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?, ?)  [[&quot;event&quot;, &quot;update&quot;], [&quot;object&quot;, &quot;---\nid: 1\nname: Salidas Complementarias 2\nexplanation: Solo salidas complementarias en horario lectivo\ncreated_at: 2015-09-10 11:29:16.456959000 Z\nupdated_at: 2015-09-10 11:29:47.252166000 Z\ndocument_file_name: PUNTUACIÓN_FOTOS_FINALISTAS_DOMINGO_SAVIO_2015_3D.doc\ndocument_content_type: application/msword\ndocument_file_size: 13824\ndocument_updated_at: 2015-09-10 11:29:16.450125000 Z\n&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:32:18.675469&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mPaperTrail::Version Load (0.2ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mCACHE (0.0ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mCACHE (0.0ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35m (144.4ms)[0m  commit transaction</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 163ms (ActiveRecord: 145.3ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:32:18 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (1.9ms)</pre>
+
+<p>Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.2ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]</pre>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 13:33:16 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;[0m
+Rendered register_models/index.html.erb within layouts/application (2.3ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:34:50 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.2ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (3.4ms)</pre>
+
+<p>Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET “/register_models/1/edit” for 127.0.0.1 at 2015-09-10 13:35:42
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-edit">RegisterModelsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/_form.html.erb (2.9ms)
+Rendered register_models/edit.html.erb within layouts/application (3.9ms)</pre>
+
+<p>Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started PATCH “/register_models/1” for 127.0.0.1 at 2015-09-10 13:35:43
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-update">RegisterModelsController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;eSjwpr4ol86alUmtSn4zl8SElj+IjBISFgdClFgSuNh9/7kex72q6txn2CJpqU+QS2E8j4TLUW245R5sgCOwPg==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias 2&quot;, &quot;explanation&quot;=&gt;&quot;Solo salidas complementarias en horario lectivo&quot;}, &quot;commit&quot;=&gt;&quot;Update Register model&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.1ms)[0m  begin transaction
+[1m[36mRegisterModel Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM &quot;register_models&quot; WHERE (&quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias 2&#39; AND &quot;register_models&quot;.&quot;id&quot; != 1) LIMIT 1[0m
+[1m[35m (0.1ms)[0m  commit transaction</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:35:44 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (1.4ms)</pre>
+
+<p>Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/1/edit” for 127.0.0.1 at 2015-09-10 13:35:46
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-edit">RegisterModelsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/_form.html.erb (2.4ms)
+Rendered register_models/edit.html.erb within layouts/application (3.5ms)</pre>
+
+<p>Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.1ms)</p>
+
+<p>Started PATCH “/register_models/1” for 127.0.0.1 at 2015-09-10 13:35:53
++0200 Processing by <a
+href="../RegisterModelsController.html#method-i-update">RegisterModelsController#update</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;rB+YZmkZz7yEc7CqxtPc3/r+kPQYA6q872UMRT9Az7WoyNHeEIzymMKBISXlBKDYdRs6RBRE6cNBh1C953HHUw==&quot;, &quot;register_model&quot;=&gt;{&quot;name&quot;=&gt;&quot;Salidas Complementarias 2&quot;, &quot;explanation&quot;=&gt;&quot;Solo salidas complementarias en horario lectivo&quot;, &quot;document&quot;=&gt;#&lt;ActionDispatch::Http::UploadedFile:0x007f9649f2fe68 @tempfile=#&lt;Tempfile:/tmp/RackMultipart20150910-8404-1av5l17.doc&gt;, @original_filename=&quot;p.doc&quot;, @content_type=&quot;application/msword&quot;, @headers=&quot;Content-Disposition: form-data; name=\&quot;register_model[document]\&quot;; filename=\&quot;p.doc\&quot;\r\nContent-Type: application/msword\r\n&quot;&gt;}, &quot;commit&quot;=&gt;&quot;Update Register model&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.0ms)[0m  [1mbegin transaction[0m</pre>
+<dl class="rdoc-list note-list"><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/83878c91171338902e0fe0fb97a8c47a20150910-8404-l1ucsy.doc&#39;</p>
+</dd><dt>Command 
+<dd>
+<p>file -b –mime
+&#39;/tmp/83878c91171338902e0fe0fb97a8c47a20150910-8404-asy1mo.doc&#39;</p>
+</dd></dl>
+
+<pre>[1m[35mRegisterModel Exists (0.1ms)[0m  SELECT  1 AS one FROM &quot;register_models&quot; WHERE (&quot;register_models&quot;.&quot;name&quot; = &#39;Salidas Complementarias 2&#39; AND &quot;register_models&quot;.&quot;id&quot; != 1) LIMIT 1
+[1m[36mSQL (0.1ms)[0m  [1mUPDATE &quot;register_models&quot; SET &quot;document_updated_at&quot; = ?, &quot;document_file_name&quot; = ?, &quot;updated_at&quot; = ? WHERE &quot;register_models&quot;.&quot;id&quot; = ?[0m  [[&quot;document_updated_at&quot;, &quot;2015-09-10 11:35:53.600512&quot;], [&quot;document_file_name&quot;, &quot;p.doc&quot;], [&quot;updated_at&quot;, &quot;2015-09-10 11:35:53.605176&quot;], [&quot;id&quot;, 1]]
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;versions&quot; (&quot;event&quot;, &quot;object&quot;, &quot;created_at&quot;, &quot;item_id&quot;, &quot;item_type&quot;) VALUES (?, ?, ?, ?, ?)  [[&quot;event&quot;, &quot;update&quot;], [&quot;object&quot;, &quot;---\nid: 1\nname: Salidas Complementarias 2\nexplanation: Solo salidas complementarias en horario lectivo\ncreated_at: 2015-09-10 11:29:16.456959000 Z\nupdated_at: 2015-09-10 11:32:18.675469000 Z\ndocument_file_name: p.doc\ndocument_content_type: application/msword\ndocument_file_size: 13824\ndocument_updated_at: 2015-09-10 11:32:18.670311000 Z\n&quot;], [&quot;created_at&quot;, &quot;2015-09-10 11:35:53.605176&quot;], [&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mCACHE (0.0ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mCACHE (0.0ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35m (143.3ms)[0m  commit transaction</pre>
+
+<p>Redirected to <a
+href="http://localhost:3000/register_models/1">localhost:3000/register_models/1</a>
+Completed 302 Found in 157ms (ActiveRecord: 143.9ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:35:53 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (2.0ms)</pre>
+
+<p>Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:43:05 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (8.8ms)</pre>
+
+<p>Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET
+“/assets/word32-970358add6d0df6b2346f64dd6f6ab210791cdd2fa78b6f0a4bbb373add86632.png”
+for 127.0.0.1 at 2015-09-10 13:43:05 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:43:24 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (5.4ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET
+“/assets/word32-970358add6d0df6b2346f64dd6f6ab210791cdd2fa78b6f0a4bbb373add86632.png”
+for 127.0.0.1 at 2015-09-10 13:43:24 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:43:46 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (11.6ms)</pre>
+
+<p>Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET
+“/assets/word16-18ccf429b5064f634e30d694a8ec21114c8c48c30174da6440ca3da98f150a05.png”
+for 127.0.0.1 at 2015-09-10 13:43:46 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:44:56 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.2ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (6.8ms)</pre>
+
+<p>Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:44:56 +0200</p>
+
+<p>Started GET
+“/assets/word16-18ccf429b5064f634e30d694a8ec21114c8c48c30174da6440ca3da98f150a05.png”
+for 127.0.0.1 at 2015-09-10 13:44:57 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:45:42 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.9ms)</pre>
+
+<p>Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)</p>
+
+<p>SyntaxError (/home/txema/work/Q/app/views/register_models/show.html.erb:6:
+syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;</p>
+
+<pre>            image_tag(&#39;word16.png&#39;, :alt =&gt; @register_model.name), 
+                                                                  ^):
+app/views/register_models/show.html.erb:6: syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.3ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:05 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (3.4ms)</pre>
+
+<p>Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:05 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:26 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.2ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (3.4ms)</pre>
+
+<p>Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.3ms)</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:26 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:27 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (2.4ms)</pre>
+
+<p>Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:27 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (2.9ms)</pre>
+
+<p>Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:27 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:35 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.2ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (6.2ms)</pre>
+
+<p>Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)</p>
+
+<p>ActionView::Template::Error (wrong number of arguments (2 for 1)):</p>
+
+<pre>  1: &lt;p id=&quot;notice&quot;&gt;&lt;%= notice %&gt;&lt;/p&gt;
+  2: 
+  3: &lt;h2&gt;
+  4:   &lt;%= link_to raw (@register_model.name +
+  5:               image_tag(&#39;word16.png&#39;, :alt =&gt; @register_model.name)), 
+  6:               @register_model.document.url %&gt;
+  7:   
+app/views/register_models/show.html.erb:4:in `_app_views_register_models_show_html_erb__1780522383991590358_70141732254280&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.3ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:46 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (0.8ms)</pre>
+
+<p>Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)</p>
+
+<p>SyntaxError (/home/txema/work/Q/app/views/register_models/show.html.erb:6:
+syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;</p>
+
+<pre>            @register_model.name, 
+                                 ^):
+app/views/register_models/show.html.erb:6: syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.5ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:48 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (0.9ms)</pre>
+
+<p>Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)</p>
+
+<p>SyntaxError (/home/txema/work/Q/app/views/register_models/show.html.erb:6:
+syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;</p>
+
+<pre>            @register_model.name, 
+                                 ^):
+app/views/register_models/show.html.erb:6: syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.2ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:48 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (0.8ms)</pre>
+
+<p>Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)</p>
+
+<p>SyntaxError (/home/txema/work/Q/app/views/register_models/show.html.erb:6:
+syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;</p>
+
+<pre>            @register_model.name, 
+                                 ^):
+app/views/register_models/show.html.erb:6: syntax error, unexpected &#39;,&#39;, expecting &#39;)&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.8ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:46:53 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (3.1ms)</pre>
+
+<p>Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET
+“/assets/word16-18ccf429b5064f634e30d694a8ec21114c8c48c30174da6440ca3da98f150a05.png”
+for 127.0.0.1 at 2015-09-10 13:46:53 +0200</p>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 13:47:11 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;[0m
+Rendered register_models/index.html.erb within layouts/application (1.5ms)</pre>
+
+<p>Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/register_models” for 127.0.0.1 at 2015-09-10 13:53:20 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.2ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+Rendered register_models/index.html.erb within layouts/application (5.1ms)</pre>
+
+<p>Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started GET
+“/assets/scaffolds.self-a689a325a8f8782be781378e102cf10b4f0e08e8f6cc9c5fc5913210189ed2f7.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET
+“/assets/register_models.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1”
+for 127.0.0.1 at 2015-09-10 13:53:20 +0200</p>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:53:26 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.2ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.0ms)</pre>
+
+<p>Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)</p>
+
+<p>SyntaxError (/home/txema/work/Q/app/views/register_models/show.html.erb:21:
+syntax error, unexpected &#39;&lt;&#39;, expecting &#39;)&#39; &lt;% end
+);@output_buffer.safe_append=&#39;</p>
+
+<pre>^</pre>
+
+<p>/home/txema/work/Q/app/views/register_models/show.html.erb:27: syntax
+error, unexpected keyword_ensure, expecting keyword_end
+/home/txema/work/Q/app/views/register_models/show.html.erb:29: syntax
+error, unexpected end-of-input, expecting keyword_end):</p>
+
+<pre>app/views/register_models/show.html.erb:21: syntax error, unexpected &#39;&lt;&#39;, expecting &#39;)&#39;
+app/views/register_models/show.html.erb:27: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/register_models/show.html.erb:29: syntax error, unexpected end-of-input, expecting keyword_end
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.7ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:53:26 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered register_models/show.html.erb within layouts/application (1.1ms)</pre>
+
+<p>Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)</p>
+
+<p>SyntaxError (/home/txema/work/Q/app/views/register_models/show.html.erb:21:
+syntax error, unexpected &#39;&lt;&#39;, expecting &#39;)&#39; &lt;% end
+);@output_buffer.safe_append=&#39;</p>
+
+<pre>^</pre>
+
+<p>/home/txema/work/Q/app/views/register_models/show.html.erb:27: syntax
+error, unexpected keyword_ensure, expecting keyword_end
+/home/txema/work/Q/app/views/register_models/show.html.erb:29: syntax
+error, unexpected end-of-input, expecting keyword_end):</p>
+
+<pre>app/views/register_models/show.html.erb:21: syntax error, unexpected &#39;&lt;&#39;, expecting &#39;)&#39;
+app/views/register_models/show.html.erb:27: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/register_models/show.html.erb:29: syntax error, unexpected end-of-input, expecting keyword_end
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.4ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.8ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:53:36 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.2ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mPaperTrail::Version Load (0.4ms)[0m  [1mSELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (15.8ms)</pre>
+
+<p>Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)</p>
+
+<p>ActionView::Template::Error (undefined method `document&#39; for
+#&lt;PaperTrail::Version:0x007f96495873c0&gt;):</p>
+
+<pre>  17: 
+  18: &lt;% @register_model.versions.each do |version| %&gt;
+  19:    &lt;%= link_to &quot;#{@register_model.name} v#{version.id}.&quot;, 
+  20:                version.document.url %&gt;
+  21: &lt;% end %&gt;
+  22: 
+  23: 
+app/views/register_models/show.html.erb:20:in `block in _app_views_register_models_show_html_erb__1780522383991590358_70141727910260&#39;
+app/views/register_models/show.html.erb:18:in `_app_views_register_models_show_html_erb__1780522383991590358_70141727910260&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (21.2ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 13:54:00 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.2ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (10.8ms)</pre>
+
+<p>Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)</p>
+
+<p>ActionView::Template::Error (undefined method `instance&#39; for
+#&lt;PaperTrail::Version:0x007f9649bc8888&gt;):</p>
+
+<pre>  17: 
+  18: &lt;% @register_model.versions.each do |version| %&gt;
+  19:    &lt;%= link_to &quot;#{@register_model.name} v#{version.id}.&quot;, 
+  20:                version.instance.document.url %&gt;
+  21: &lt;% end %&gt;
+  22: 
+  23: 
+app/views/register_models/show.html.erb:20:in `block in _app_views_register_models_show_html_erb__1780522383991590358_70141730386360&#39;
+app/views/register_models/show.html.erb:18:in `_app_views_register_models_show_html_erb__1780522383991590358_70141730386360&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (21.1ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 14:05:39 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mRegisterModel Load (0.1ms)[0m  [1mSELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (3.9ms)</pre>
+
+<p>Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)</p>
+
+<p>ActionView::Template::Error (undefined method `instance&#39; for
+#&lt;PaperTrail::Version:0x007f9649d169b0&gt;):</p>
+
+<pre>  17: 
+  18: &lt;% @register_model.versions.each do |version| %&gt;
+  19:    &lt;%= link_to &quot;#{@register_model.name} v#{version.id}.&quot;, 
+  20:                version.instance.document.url %&gt;
+  21: &lt;% end %&gt;
+  22: 
+  23: 
+app/views/register_models/show.html.erb:20:in `block in _app_views_register_models_show_html_erb__1780522383991590358_70141730386360&#39;
+app/views/register_models/show.html.erb:18:in `_app_views_register_models_show_html_erb__1780522383991590358_70141730386360&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.0ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.8ms)</pre>
+
+<p>Started GET “/register_models/1” for 127.0.0.1 at 2015-09-10 14:05:44 +0200
+Processing by <a
+href="../RegisterModelsController.html#method-i-show">RegisterModelsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mRegisterModel Load (0.1ms)[0m  SELECT  &quot;register_models&quot;.* FROM &quot;register_models&quot; WHERE &quot;register_models&quot;.&quot;id&quot; = ? LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mPaperTrail::Version Load (0.1ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; ASC, &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/show.html.erb within layouts/application (4.5ms)</pre>
+
+<p>Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)</p>
+
+<p>ActionView::Template::Error (undefined method `document&#39; for
+nil:NilClass):</p>
+
+<pre>  17: 
+  18: &lt;% @register_model.versions.each do |version| %&gt;
+  19:    &lt;%= link_to &quot;#{@register_model.name} v#{version.id}.&quot;, 
+  20:                version.reify.document.url %&gt;
+  21: &lt;% end %&gt;
+  22: 
+  23: 
+app/views/register_models/show.html.erb:20:in `block in _app_views_register_models_show_html_erb__1780522383991590358_70141730930720&#39;
+app/views/register_models/show.html.erb:18:in `_app_views_register_models_show_html_erb__1780522383991590358_70141730930720&#39;
+
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.4ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (10.5ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+Rendered /home/txema/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (20.9ms)</pre>
+
+<p>Started GET “/” for 127.0.0.1 at 2015-09-11 09:39:09 +0200</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Processing by <a
+href="../RegisterModelsController.html#method-i-index">RegisterModelsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mRegisterModel Load (0.1ms)[0m  SELECT &quot;register_models&quot;.* FROM &quot;register_models&quot;
+[1m[36mPaperTrail::Version Load (0.2ms)[0m  [1mSELECT  &quot;versions&quot;.* FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?  ORDER BY &quot;versions&quot;.&quot;created_at&quot; DESC, &quot;versions&quot;.&quot;id&quot; DESC LIMIT 1[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+[1m[35mPaperTrail::Version Load (0.1ms)[0m  SELECT &quot;versions&quot;.&quot;id&quot; FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_type&quot; = ? AND &quot;versions&quot;.&quot;item_id&quot; = ?  ORDER BY &quot;versions&quot;.&quot;id&quot; ASC  [[&quot;item_type&quot;, &quot;RegisterModel&quot;], [&quot;item_id&quot;, 1]]
+[1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM &quot;versions&quot; WHERE &quot;versions&quot;.&quot;item_id&quot; = ? AND &quot;versions&quot;.&quot;item_type&quot; = ?[0m  [[&quot;item_id&quot;, 1], [&quot;item_type&quot;, &quot;RegisterModel&quot;]]
+Rendered register_models/index.html.erb within layouts/application (238.3ms)</pre>
+
+<p>Completed 200 OK in 553ms (Views: 522.6ms | ActiveRecord: 0.9ms)</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../DeviseCreateRacs.html">DeviseCreateRacs</a>
+(20150911082259)</p>
+
+<pre>[1m[35m (0.1ms)[0m  begin transaction
+[1m[36m (0.2ms)[0m  [1mCREATE TABLE &quot;racs&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;email&quot; varchar DEFAULT &#39;&#39; NOT NULL, &quot;encrypted_password&quot; varchar DEFAULT &#39;&#39; NOT NULL, &quot;reset_password_token&quot; varchar, &quot;reset_password_sent_at&quot; datetime, &quot;sign_in_count&quot; integer DEFAULT 0 NOT NULL, &quot;current_sign_in_at&quot; datetime, &quot;last_sign_in_at&quot; datetime, &quot;current_sign_in_ip&quot; varchar, &quot;last_sign_in_ip&quot; varchar, &quot;name&quot; varchar, &quot;surnames&quot; varchar, &quot;approved&quot; boolean DEFAULT &#39;f&#39;, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL) [0m
+[1m[35m (0.0ms)[0m  select sqlite_version(*)
+[1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX &quot;index_racs_on_email&quot; ON &quot;racs&quot; (&quot;email&quot;)[0m
+[1m[35m (0.1ms)[0m              SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_racs_on_email&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_racs_on_email&#39; AND type=&#39;index&#39;
+
+[1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX &quot;index_racs_on_reset_password_token&quot; ON &quot;racs&quot; (&quot;reset_password_token&quot;)[0m
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)  [[&quot;version&quot;, &quot;20150911082259&quot;]]
+[1m[36m (137.3ms)[0m  [1mcommit transaction[0m
+[1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;
+[1m[36m (0.1ms)[0m  [1m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_racs_on_reset_password_token&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_racs_on_reset_password_token&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[35m (0.1ms)[0m              SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_racs_on_email&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_racs_on_email&#39; AND type=&#39;index&#39;
+
+[1m[36m (0.1ms)[0m  [1m            SELECT sql
+          FROM sqlite_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;
+          UNION ALL
+          SELECT sql
+          FROM sqlite_temp_master
+          WHERE name=&#39;index_versions_on_item_type_and_item_id&#39; AND type=&#39;index&#39;</pre>
+
+<p>[0m</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

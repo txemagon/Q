@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :racs
   resources :register_models
 
   root 'register_models#index'
