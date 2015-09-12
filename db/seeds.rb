@@ -19,10 +19,12 @@ password_confirmation = ask("Confirm RAC password: ") { |q| q.echo = false}
 
 raise "Passwords doesn't match." unless password == password_confirmation
 
-User.create!(
+the_admin = User.new(
 	:first_name => firstname,
 	:last_name  => lastname,
 	:email    => email,
 	:password => password,
 	:password_confirmation => password_confirmation,
 	:rac => true )
+the_admin.skip_confirmation!
+the_admin.save!

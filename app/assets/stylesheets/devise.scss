@@ -7,3 +7,38 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;
 }
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+   font-weight: bold;
+   border-radius: 4px 4px 4px 4px;
+   margin-bottom: 18px;
+   padding: 12px 25px 12px 24px;
+   box-shadow: 3px 3px 1px 1px #CCCCCC;
+ }
+
+.alert-success {
+    background-color: #66E167;
+   border-color: #D6E9C6;
+   width: 280px;
+   color: black;
+   padding-top: 20px;
+ }
+
+#notice {
+   font-weight: bold;
+   border-color: #d6e9c6;
+   color: #468847;
+   text-align: left;
+   border-radius: 4px 4px 4px 4px;
+   margin-bottom: 18px;
+   padding: 12px 25px 12px 24px;
+   box-shadow: 3px 3px 1px 1px #CCCCCC;
+ }
