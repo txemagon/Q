@@ -1,0 +1,42 @@
+<div>
+<% if user_signed_in? %>
+
+  <% if session['avatar'] %>
+    <%= link_to image_tag(session['avatar'], :class => "ProfileImage"),
+                edit_user_registration_path %>
+  <% end %>
+
+  <span id="login_name">
+      <%= current_user.first_name %>
+      <%= current_user.last_name %> <br/>
+  </span>
+
+   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+   <%= link_to('Edit Profile', edit_user_registration_path) %>
+
+  <span style="color: gray;">
+     <%= current_user.email %> <br/>
+  </span>
+
+<% else %>
+
+  <div id="manual_login">
+      <em>Or manually:</em><br/>
+	  <%= link_to('Login', new_user_session_path)  %> <br/>
+	  <%= link_to('Register', new_user_registration_path)  %>
+  </div>
+
+  <div>
+	  <span id="enter_with">
+	     Enter with:
+	  </span>
+	  <%= link_to image_tag('social_icons/google_64.png',
+	  	                     :style => 'vertical-align: middle;' ),
+	      omniauth_authorize_path('user', :google_oauth2),
+	      :title => 'Use your salesianosdosa.com account only.'
+	  %>
+  </div>
+<% end %>
+
+</div>
+

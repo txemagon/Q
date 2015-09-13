@@ -7,7 +7,7 @@ class RegisterModel < ActiveRecord::Base
 
   DOCUMENT_PATH = "/system/register_models/documents"
 
-  has_paper_trail :ignore => [:name, :explanation]
+  has_paper_trail :ignore => [:explanation]
 
   validates :name, presence: true, uniqueness: true
 

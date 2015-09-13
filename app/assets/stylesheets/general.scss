@@ -1,0 +1,28 @@
+$logo_space: 60px;
+
+@font-face {
+  font-family: 'Sawasdee';
+  src: assets-url('/fonts/Sawasdee.ttf');
+}
+
+#page {
+   margin: 0 10ex;
+}
+
+.Logo {
+	font-family: Sawasdee;
+	font-size: 120px;
+	margin-left: 80px;
+	padding: 30px 20px 40px 30px;
+	width: 140px;
+	border-bottom: 1px solid black;
+}
+
+.ClearBoth {
+    clear: both;
+}
+
+#header {
+	margin-top: $logo_space;
+	margin-bottom: 40px;
+}

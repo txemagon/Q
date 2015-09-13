@@ -7,7 +7,7 @@ raise "Could not load environment variables from #{env_file}" unless File.exists
 data = YAML.load_file(env_file)
 
 ['global', Rails.env].each do |environment|
-    data[environment].each { |key, value| puts key;ENV[key.to_s] = value }
+    data[environment].each { |key, value| ENV[key.to_s] = value }
 end
 
 puts "Enviroment varibles loaded"

@@ -23,4 +23,13 @@ class User < ActiveRecord::Base
     user
   end
 
+
+  def apply_oauth(omniauth)
+    omniauth = omniauth['info']
+    self.first_name = omniauth['first_name']
+    self.last_name  = omniauth['last_name']
+    self.email      = omniauth['email']
+  end
+
+
 end

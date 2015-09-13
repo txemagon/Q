@@ -1,0 +1,32 @@
+$radius: 8px;
+
+.ProfileImage{
+   border-radius: $radius $radius $radius $radius;
+   float: right;
+   margin-left: 2ex;
+   vertical-align: middle;
+}
+
+.Profile {
+   text-align: right;
+   width: 340px;
+   float:right;
+
+}
+
+#manual_login {
+	float: right;
+	text-align: left;
+	border-left: 1px solid gray;
+	margin-left: 2px;
+	padding-left: 2ex;
+}
+
+#enter_with {
+    font-size:24px;
+    font-weight: bold;
+}
+
+#login_name {
+	color: blue;
+}
