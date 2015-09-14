@@ -1,0 +1,20 @@
+<h1>RACs' Board</h1>
+
+<h2>RACs</h2>
+<table>
+	<thead>
+		<td>Name</td>
+		<td>email</td>
+		<td>Confirmed</td>
+	</thead>
+	<% @approved.each do |user| %>
+	   <tr>
+	   	<td><%= "#{user.first_name} #{user.last_name}"<%> </td>
+        <td><%= user.email %></td>
+        <td>
+            <%= "Yes" if user.confirmed? %>
+            <%= link_to "Confirm him", board_confirm_path %>
+        </td>
+	   </tr>
+	<% end %>
+</table>

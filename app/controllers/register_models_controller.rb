@@ -1,5 +1,7 @@
 class RegisterModelsController < ApplicationController
-  before_action :set_register_model, only: [:show, :edit, :update, :destroy]
+  before_action :set_register_model , only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! , :except => [:index]
+  before_action :is_admin?, :except => [:index, :show]
 
   # GET /register_models
   # GET /register_models.json
@@ -70,5 +72,12 @@ class RegisterModelsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_model_params
       params.require(:register_model).permit(:name, :explanation, :document)
+    end
+
+    # Ensure a RAC is performing the operation.
+    def is_admin?
+      return true if user_signed_in? and current_user.confirmed? and current_user.rac?
+      flash[:alert] = "Only RACs are allowed to perform this action."
+      redirect_to register_models_path
     end
 end

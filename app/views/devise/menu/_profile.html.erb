@@ -33,7 +33,8 @@
 	  <%= link_to image_tag('social_icons/google_64.png',
 	  	                     :style => 'vertical-align: middle;' ),
 	      omniauth_authorize_path('user', :google_oauth2),
-	      :title => 'Use your salesianosdosa.com account only.'
+	      :title => 'Use your salesianosdosa.com account only.',
+        :class => "BlankLink"
 	  %>
   </div>
 <% end %>

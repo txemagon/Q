@@ -26,3 +26,16 @@ $logo_space: 60px;
 	margin-top: $logo_space;
 	margin-bottom: 40px;
 }
+
+.BlankLink {
+	text-decoration: none;
+}
+
+.BlankLink:hover {
+	background-color: inherit;
+	color: blue;
+}
+
+.BlankLink:visited {
+	color: inherit;
+}

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   validates :last_name, :uniqueness => {:scope => :first_name}
 
+  after_create :send_welcome_email
+
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info
     user = User.where(:email => data["email"]).first
@@ -29,7 +31,12 @@ class User < ActiveRecord::Base
     self.first_name = omniauth['first_name']
     self.last_name  = omniauth['last_name']
     self.email      = omniauth['email']
+    self.password   = Devise.friendly_token.first(8)
+    self.password_confirmation   = Devise.friendly_token.first(8)
   end
 
+  def self.send_welcome_email(attributes={})
+    
+  end
 
 end

@@ -23,9 +23,15 @@
             v<%= register_model.versions.count - 1%>
         </td>
         <td><%= register_model.explanation %></td>
-        <td><%= link_to 'Show', register_model %></td>
-        <td><%= link_to 'Edit', edit_register_model_path(register_model) %></td>
-        <td><%= link_to 'Destroy', register_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if user_signed_in? %>
+          <td><%= link_to 'Show', register_model %></td>
+
+          <% if current_user.rac? %>
+            <td><%= link_to 'Edit', edit_register_model_path(register_model) %></td>
+            <td><%= link_to 'Destroy', register_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
