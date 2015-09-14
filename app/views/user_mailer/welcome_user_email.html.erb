@@ -1,0 +1,32 @@
+
+    <p>
+    <%= image_tag attachments.inline['Q.png'].url %>
+    </p>
+
+	<h1>Welcome!</h1>
+
+	<p>You have succesfully signed up to Q, the Quality Management Application
+	for vanishing paper flow. We have received the following description of you from <em>salesianosdosa.com</em> google's educational account: </p>
+
+	<ul>
+		<li>Name: <%= "#{@user.first_name} #{@user.last_name}" %> </li>
+		<li>Mail: <%= @user.email %> </li>
+	</ul>
+
+	<p>We have generated a random password for the <span class="LogoFont">Q</span> applicaction, as well: <strong>	<%= @pass %> </strong>. As long as we don't
+	keep track of passwords we encourage you to replace it by a more familiar one. Follow the next link to reset your password or any other field of your profile</p>
+
+	<p><%= link_to 'Change my password', edit_registration_url(@user) %></p>
+
+	<p>We also have sent you a confirmation email during the account creation process. Remember to confirm your account before getting full access to <span class="LogoFont">Q</span> app.</p>
+
+	<p>
+	   Sincerily, <br/><br/>
+	   <strong>David Calle</strong><br/>
+	   <em>Responsible of Quality Area</em>
+	</p>
+
+
+<p>
+	<%= image_tag attachments.inline['vertical_cat_claim.png'].url %>
+</p>
