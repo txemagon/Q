@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <th>Name</th>
+        <th>email</th>
+        <th>Confirmed?</th>
+    </thead>
+    <% users.each do |user| %>
+      <tr>
+	   	<td><%= "#{user.first_name} #{user.last_name}" %> </td>
+        <td class="SoftEmail"><em>&lt;<%= user.email %>&gt;</em></td>
+        <td>
+            <span class="Light"> <%= "Yes" if user.confirmed? %> </span>
+            <%= link_to "Confirm him", confirm_board_url(user), :method => :put, :confirm => 'Are you sure?' if !user.confirmed? %>
+        </td>
+            <% if user.admin? %>
+          <td>
+            <%= link_to "Give Up", banish_board_url(user), :method => :put, :confirm => 'Are you sure?' %>
+            <em><%= "<= (you shouldn't)" if user == current_user %></em>
+            </td>
+            <% else %>
+            <td>
+        	<%= link_to "Approve", welcome_board_url(user), :method => :put, :confirm => 'Are you sure?' %>
+            </td>
+            <td>
+            <%= link_to 'Erase', board_url(user), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+            <% end %>
+	   </tr>
+    <% end %>
+</table>

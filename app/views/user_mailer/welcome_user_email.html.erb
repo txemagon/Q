@@ -1,7 +1,4 @@
-
-    <p>
-    <%= image_tag attachments.inline['Q.png'].url %>
-    </p>
+    <%= render 'email_header' %>
 
 	<h1>Welcome!</h1>
 
@@ -9,7 +6,7 @@
 	for vanishing paper flow. We have received the following description of you from <em>salesianosdosa.com</em> google's educational account: </p>
 
 	<ul>
-		<li>Name: <%= "#{@user.first_name} #{@user.last_name}" %> </li>
+		<li>Name: <%= @user.full_name %> </li>
 		<li>Mail: <%= @user.email %> </li>
 	</ul>
 
@@ -20,13 +17,4 @@
 
 	<p>We also have sent you a confirmation email during the account creation process. Remember to confirm your account before getting full access to <span class="LogoFont">Q</span> app.</p>
 
-	<p>
-	   Sincerily, <br/><br/>
-	   <strong>David Calle</strong><br/>
-	   <em>Responsible of Quality Area</em>
-	</p>
-
-
-<p>
-	<%= image_tag attachments.inline['vertical_cat_claim.png'].url %>
-</p>
+    <%= render 'signature' %>

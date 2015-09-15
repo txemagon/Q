@@ -1,14 +1,36 @@
 class UserMailer < ApplicationMailer
-	default from: User.first.email
+
 
 	def welcome_user_email(user, pass)
-		@user = user
-		@pass = pass
-
-        attachments.inline['Q.png'] = File.read(Rails.root.join("app/assets/images", "Q120.png"))
-        attachments.inline['vertical_cat_claim.png'] = File.read(Rails.root.join("app/assets/images", "vertical_cat_claim256.png"))
+		@user, @pass = user, pass
 
 		mail(to: @user.email,
 			subject: "Welcome to Q")
 	end
+
+	def youve_been_confirmed(user, whom)
+		@user, @whom = user, whom
+        mail(to: @user.email,
+        	 subject: "You've been confirmed.")
+	end
+
+	def youve_been_banished(user, whom)
+		@user, @whom = user, whom
+        mail(to: @user.email,
+        	 subject: "Bye.")
+	end
+
+	def youve_been_approved(user, whom)
+		@user, @whom = user, whom
+        mail(to: @user.email,
+        	 subject: "Welcome to the board.")
+	end
+
+
+	def cancel_account(user, whom)
+		@user, @whom = user, whom
+        mail(to: @user.email,
+        	 subject: "Account canceled.")
+	end
+
 end

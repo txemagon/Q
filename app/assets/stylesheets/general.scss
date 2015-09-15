@@ -9,6 +9,11 @@ $logo_space: 60px;
    margin: 0 10ex;
 }
 
+#header {
+	margin-top: $logo_space;
+	margin-bottom: 40px;
+}
+
 #upper_menu {
 	text-align: right;
 }
@@ -30,10 +35,6 @@ $logo_space: 60px;
     clear: both;
 }
 
-#header {
-	margin-top: $logo_space;
-	margin-bottom: 40px;
-}
 
 .BlankLink {
 	text-decoration: none;
@@ -46,4 +47,12 @@ $logo_space: 60px;
 
 .BlankLink:visited {
 	color: inherit;
+}
+
+.SoftEmail {
+	color: #333;
+}
+
+.Ligth {
+    color: #999;
 }

@@ -1,0 +1,9 @@
+<%= render 'email_header' %>
+
+	<h1>Hi, <%= @user.first_name %></h1>
+
+    <p> We are proud to announce you that <em><%= @whom.full_name %></em>
+    on behalf of the administration board has approved you as a member.</p>
+
+ <%= render 'signature' %>
+

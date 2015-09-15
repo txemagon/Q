@@ -1,0 +1,8 @@
+<%= render 'email_header' %>
+
+	<h1>Hi, <%= @user.first_name %></h1>
+
+    <p> I want to notice you that your <strong>Q</strong> user account has been confirmed by <em><%= @whom.full_name %></em>.
+
+ <%= render 'signature' %>
+
