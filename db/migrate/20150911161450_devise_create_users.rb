@@ -37,7 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Custom attributes
       t.string :first_name, null: false
       t.string :last_name, null: false
-      t.boolean :rac, default: false, null: false
+      t.boolean :admin, default: false, null: false
 
       t.timestamps null: false
     end
@@ -45,7 +45,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    add_index :users, :unlock_token,         unique: true
 
     add_index :users, [:first_name, :last_name], unique: true
 

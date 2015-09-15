@@ -74,10 +74,10 @@ class RegisterModelsController < ApplicationController
       params.require(:register_model).permit(:name, :explanation, :document)
     end
 
-    # Ensure a RAC is performing the operation.
+    # Ensure a Admin is performing the operation.
     def is_admin?
-      return true if user_signed_in? and current_user.confirmed? and current_user.rac?
-      flash[:alert] = "Only RACs are allowed to perform this action."
+      return true if user_signed_in? and current_user.confirmed? and current_user.admin?
+      flash[:alert] = "Only #{ENV['ADMIN_ROLE']}s are allowed to perform this action."
       redirect_to register_models_path
     end
 end

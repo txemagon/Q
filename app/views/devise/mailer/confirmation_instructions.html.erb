@@ -1,5 +1,18 @@
+
+<% attachments.inline['Q.png'] = File.read(Rails.root.join("app/assets/images", "Q120.png")) %>
+<% attachments.inline['vertical_cat_claim.png'] = File.read(Rails.root.join("app/assets/images", "vertical_cat_claim256.png")) %>
+
+ <p>
+    <%= image_tag attachments.inline['Q.png'].url %>
+ </p>
+
 <p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+
+<p>
+	<%= image_tag attachments.inline['vertical_cat_claim.png'].url %>
+</p>

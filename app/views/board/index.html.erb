@@ -1,6 +1,6 @@
-<h1>RACs' Board</h1>
+<h1><%= ENV['ADMIN_ROLE'] -%>s' Board</h1>
 
-<h2>RACs</h2>
+<h2><%= ENV['ADMIN_ROLE'] -%>s</h2>
 <table>
 	<thead>
 		<td>Name</td>
@@ -9,11 +9,11 @@
 	</thead>
 	<% @approved.each do |user| %>
 	   <tr>
-	   	<td><%= "#{user.first_name} #{user.last_name}"<%> </td>
+	   	<td><%= "#{user.first_name} #{user.last_name}" %> </td>
         <td><%= user.email %></td>
         <td>
             <%= "Yes" if user.confirmed? %>
-            <%= link_to "Confirm him", board_confirm_path %>
+            <%= button_to "Confirm him", confirm_board_url(user), :method => :put, :confirm => 'Are you sure?' if !user.confirmed? %>
         </td>
 	   </tr>
 	<% end %>

@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
-  get 'board/index'
-  get 'board/welcome'
-  get 'board/confirm'
-  get 'board/banish'
+
+  resources :board, only: [:index, :destroy] do 
+    member do
+      put 'confirm'
+      put 'banish'
+      put 'welcome'
+    end
+  end
+  #get 'board/index'
+  #match "board/:action/:id(.:format)", :to => "board/welcome", :via => [:put]
+  ##put "board/confirm/:id(.:format)", :to => "board/confirm"
+  #put "board/banish/:id(.:format)",  :to => "board/banish"
+  #delete 'board/:id(.:format)', :to => 'board#destroy'
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks",

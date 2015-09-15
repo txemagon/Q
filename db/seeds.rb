@@ -11,11 +11,19 @@ require 'highline/import'
 
 
 
-firstname = ask("Enter admin name: ") { |q| q.default = 'Txema'}
-lastname  = ask("Surname: ") { |q| q.default = 'Gon'}
-email     = ask("Email address from @salesianosdosa.com: ")
-password  = ask("Enter RAC password: ") { |q| q.echo = false}
-password_confirmation = ask("Confirm RAC password: ") { |q| q.echo = false}
+firstname = ask("Enter #{ENV['ADMIN_ROLE']} given name: ") { |q| q.default = ENV['ADMIN_FIRST_NAME']}
+lastname  = ask("Enter #{ENV['ADMIN_ROLE']} family name: ") { |q| q.default = ENV['ADMIN_LAST_NAME']}
+email     = ask("Email address from salesianosdosa.com (type full address): ") do |q| 
+	q.default = ENV['ADMIN_EMAIL']
+end
+password  = ask("Enter #{ENV['ADMIN_ROLE']} password: ") do 
+	|q| q.echo = false
+	q.default = ENV['ADMIN_PASSWORD']
+end
+password_confirmation = ask("Confirm #{ENV['ADMIN_ROLE']} password: ") do |q| 
+	q.echo = false
+	q.default = ENV['ADMIN_PASSWORD']
+end
 
 raise "Passwords doesn't match." unless password == password_confirmation
 
@@ -25,6 +33,7 @@ the_admin = User.new(
 	:email    => email,
 	:password => password,
 	:password_confirmation => password_confirmation,
-	:rac => true )
+	:admin => true )
+
 the_admin.skip_confirmation!
 the_admin.save!

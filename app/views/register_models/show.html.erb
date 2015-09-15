@@ -39,6 +39,6 @@
 
 <p>Initial version: <%=  link_to_first_version @register_model %></p>
 
-<%= link_to 'Edit', edit_register_model_path(@register_model) if you_are_rac? %> 
-<%= "|" if you_are_rac? %>
+<%= link_to 'Edit', edit_register_model_path(@register_model) if you_are_admin? %> 
+<%= "|" if you_are_admin? %>
 <%= link_to 'Back', register_models_path %>

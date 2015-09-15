@@ -8,6 +8,11 @@
 	</div>
 
 	<div style="clear:both;"></div>
-<%= render 'layouts/messages' %>
+
+	<div id="upper_menu">
+		<%= render 'menus/admin_links'if you_are_admin? %>
+	</div>
+
+    <%= render 'menus/messages' %>
 </div>
 

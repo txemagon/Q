@@ -27,7 +27,7 @@
         <% if user_signed_in? %>
           <td><%= link_to 'Show', register_model %></td>
 
-          <% if current_user.rac? %>
+          <% if current_user.admin? %>
             <td><%= link_to 'Edit', edit_register_model_path(register_model) %></td>
             <td><%= link_to 'Destroy', register_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
@@ -39,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Register model', new_register_model_path %>
+<%= link_to 'New Register model', new_register_model_path if you_are_admin? %>

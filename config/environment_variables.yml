@@ -1,13 +1,22 @@
 development:
   GMAIL_DOMAIN: localhost
-  GOOGLE_ID: 376345038498-02k7t2b64o9novhl5pev592825tsc1u6.apps.googleusercontent.com
-  GOOGLE_SECRET: QmGujZTl1JiaZxwVDKdP1hSQ
-
+  OLD_GOOGLE_ID: 376345038498-02k7t2b64o9novhl5pev592825tsc1u6.apps.googleusercontent.com
+  OLD_GOOGLE_SECRET: QmGujZTl1JiaZxwVDKdP1hSQ
+  GOOGLE_ID: 794234123243-4r9us6mglguej3bn7ua6d1h51inl5ic9.apps.googleusercontent.com
+  GOOGLE_SECRET: h-KpARbNh7AiiaTbpBvKt4Et
+  GMAIL_DOMAIN: localhost                     # google app client id (inside credentiaals page)
+  GMAIL_USERNAME: calidad@salesianosdosa.com  # Account name for the app
+  GMAIL_PASSWORD: calidaddosa                 # Password of the previous account
+  
 production:
   GMAIL_DOMAIN: localhost
-  GOOGLE_ID: 376345038498-enf25ph2ri5qf3lmipuqs09uo4iapcqk.apps.googleusercontent.com
-  GOOGLE_SECRET: FvDYrll3phPDNMWu3kiaqPvH
-
-global:
   GMAIL_USERNAME: racdosa@gmail.com
   GMAIL_PASSWORD: callefour
+  OLD_GOOGLE_ID: 376345038498-enf25ph2ri5qf3lmipuqs09uo4iapcqk.apps.googleusercontent.com
+  OLD_GOOGLE_SECRET: FvDYrll3phPDNMWu3kiaqPvH
+
+global:
+  ADMIN_ROLE: RAC
+  ADMIN_FIRST_NAME: David
+  ADMIN_LAST_NAME: Calle
+  ADMIN_EMAIL: calidad@salesianosdosa.com # This is admin physical person account
