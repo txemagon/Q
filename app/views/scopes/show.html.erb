@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scope.name %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @scope.parent_id %>
+</p>
+
+<p>
+  <strong>Lft:</strong>
+  <%= @scope.lft %>
+</p>
+
+<p>
+  <strong>Rgt:</strong>
+  <%= @scope.rgt %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @scope.depth %>
+</p>
+
+<p>
+  <strong>Children count:</strong>
+  <%= @scope.children_count %>
+</p>
+
+<%= link_to 'Edit', edit_scope_path(@scope) %> |
+<%= link_to 'Back', scopes_path %>

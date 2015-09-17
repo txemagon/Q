@@ -29,6 +29,8 @@ gem 'omniauth-google-oauth2'
 
 gem "paperclip", "~> 4.3"
 gem 'paper_trail', '~> 4.0.0'
+gem 'awesome_nested_set'
+gem "the_sortable_tree", "~> 2.5.0"
 
 
 # Use ActiveModel has_secure_password

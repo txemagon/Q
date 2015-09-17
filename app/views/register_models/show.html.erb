@@ -19,9 +19,9 @@
 <h3>Older Versions</h3>
 <table>
     <thead>
-    	<td>File</td>
-    	<td>Operated</td>
-    	<td>Author</td>
+    	<th>File</th>
+    	<th>Operated</th>
+    	<th>Author</th>
     </thead>
 	<% @register_model.versions.reverse.each do |version| %>
 		<tr>
@@ -30,8 +30,8 @@
 		      <%=  link_to "#{@register_model.name} v#{version.index}",
 		                    version.reify.document.url %>
 		   </td>
-		   <td><%= version.created_at.to_s(:long) %></td>
-		   <td><%= version.whodunnit %></td>
+		   <td> <em><%= version.created_at.to_s(:long) %></em> </td>
+		   <td> <%= creator_of version %> </td>
 		  <% end %>
 		</tr>
 	<% end %>
@@ -39,6 +39,6 @@
 
 <p>Initial version: <%=  link_to_first_version @register_model %></p>
 
-<%= link_to 'Edit', edit_register_model_path(@register_model) if you_are_admin? %> 
+<%= link_to 'Edit', edit_register_model_path(@register_model) if you_are_admin? %>
 <%= "|" if you_are_admin? %>
 <%= link_to 'Back', register_models_path %>

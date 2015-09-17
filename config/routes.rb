@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :board, only: [:index, :destroy] do 
+  resources :scopes do
+    collection do
+      get :manage
+
+      # required for Sortable GUI server side actions
+      post :rebuild
+    end
+  end
+
+  resources :board, only: [:index, :destroy] do
     member do
       put 'confirm'
       put 'banish'

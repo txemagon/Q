@@ -1,0 +1,41 @@
+<%= form_for(@scope) do |f| %>
+  <% if @scope.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scope.errors.count, "error") %> prohibited this scope from being saved:</h2>
+
+      <ul>
+      <% @scope.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.number_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :lft %><br>
+    <%= f.number_field :lft %>
+  </div>
+  <div class="field">
+    <%= f.label :rgt %><br>
+    <%= f.number_field :rgt %>
+  </div>
+  <div class="field">
+    <%= f.label :depth %><br>
+    <%= f.number_field :depth %>
+  </div>
+  <div class="field">
+    <%= f.label :children_count %><br>
+    <%= f.number_field :children_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

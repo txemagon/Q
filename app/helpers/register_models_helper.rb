@@ -12,4 +12,9 @@ module RegisterModelsHelper
 	      link_to name, "#{RegisterModel::DOCUMENT_PATH}/#{filename}"
 	end
 
+    def creator_of (version)
+    	user = User.find(version.whodunnit)
+    	user = user.full_name if user
+    	user || "Anonymous"
+    end
 end
