@@ -1,6 +1,34 @@
 class User < ActiveRecord::Base
+
+  class ClearanceError  < StandardError; end
+  class SuicideError    < StandardError; end
+  class DecapitateError < StandardError; end
+
+  ERROR = {
+    :clearance  => "Not enough clearance to perform this operation.",
+    :decapitate => "You are the only one administrator. Choose a heir before leaving.",
+    :suicide    => <<-END
+
+    don't give up
+ -  'cause you have friends
+ -  don't give up
+ -  you're not the only one
+ -  don't give up
+ -  no reason to be ashamed
+ -  don't give up
+ -  you still have us
+ -  don't give up now
+ -  we're proud of who you are
+ -  don't give up
+ -  you know it's never been easy
+ -  don't give up
+ -  'cause I believe there's a place
+ -  there's a place where we belong
+
+END
+  }
+
   # Include default devise modules. Others available are:
-  #
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :timeoutable, :lockable,
@@ -30,7 +58,7 @@ class User < ActiveRecord::Base
 
 
   def apply_oauth(omniauth)
-    omniauth = omniauth['info']
+    omniauth        = omniauth['info']
     self.first_name = omniauth['first_name']
     self.last_name  = omniauth['last_name']
     self.email      = omniauth['email']
@@ -40,5 +68,13 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
 
+  def banish(user)
+      raise ClearanceError,  ERROR[:clearance]  if !admin?
+      raise DecapitateError, ERROR[:decapitate] if User.admins.count < 2 
+      raise SuicideError,    ERROR[:suicide]    if user == self
+
+      user.admin = false
+      user.save
+  end
 
 end

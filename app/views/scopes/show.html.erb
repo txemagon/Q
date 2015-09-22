@@ -1,28 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @scope.name %>
-</p>
-
-<p>
-  <strong>Parent:</strong>
-  <%= @scope.parent_id %>
-</p>
-
-<p>
-  <strong>Lft:</strong>
-  <%= @scope.lft %>
-</p>
-
-<p>
-  <strong>Rgt:</strong>
-  <%= @scope.rgt %>
-</p>
-
-<p>
-  <strong>Depth:</strong>
+  <strong><%= @scope.name %></strong>
+  
+  <em>
+  ( 
+  level 
   <%= @scope.depth %>
+  )
+  </em>
+
+</p>
+
+<p>
+  <strong>Belongs to:</strong>
+  <%= @scope.parent_name %>
 </p>
 
 <p>

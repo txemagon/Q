@@ -7,8 +7,6 @@
     <tr>
       <th>Name</th>
       <th>Parent</th>
-      <th>Lft</th>
-      <th>Rgt</th>
       <th>Depth</th>
       <th>Children count</th>
       <th colspan="3"></th>
@@ -19,9 +17,7 @@
     <% @scopes.each do |scope| %>
       <tr>
         <td><%= scope.name %></td>
-        <td><%= scope.parent_id %></td>
-        <td><%= scope.lft %></td>
-        <td><%= scope.rgt %></td>
+        <td><%= scope.parent_name %></td>
         <td><%= scope.depth %></td>
         <td><%= scope.children_count %></td>
         <td><%= link_to 'Show', scope %></td>

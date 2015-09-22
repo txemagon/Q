@@ -17,24 +17,9 @@
   </div>
   <div class="field">
     <%= f.label :parent_id %><br>
-    <%= f.number_field :parent_id %>
+    <%= f.collection_select :parent_id, Scope.all, :id, :name %>
   </div>
-  <div class="field">
-    <%= f.label :lft %><br>
-    <%= f.number_field :lft %>
-  </div>
-  <div class="field">
-    <%= f.label :rgt %><br>
-    <%= f.number_field :rgt %>
-  </div>
-  <div class="field">
-    <%= f.label :depth %><br>
-    <%= f.number_field :depth %>
-  </div>
-  <div class="field">
-    <%= f.label :children_count %><br>
-    <%= f.number_field :children_count %>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>

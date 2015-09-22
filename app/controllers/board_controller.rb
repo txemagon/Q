@@ -15,36 +15,12 @@ class BoardController < ApplicationController
   end
 
   def banish
-    if User.admins.count > 1 and @user != current_user
-      @user.admin = false
-      @user.save
-          logger.info "#{current_user.full_name} has banished #{@user.full_name} from the admin board."
+    begin
+      current_user.banish(@user)
+      logger.info "#{current_user.full_name} has banished #{@user.full_name} from the admin board."
       UserMailer.youve_been_banished(@user, current_user).deliver_later
-    else
-      if @user == current_user
-        flash[:alert] = <<-END
-
-    don't give up
- -  'cause you have friends
- -  don't give up
- -  you're not the only one
- -  don't give up
- -  no reason to be ashamed
- -  don't give up
- -  you still have us
- -  don't give up now
- -  we're proud of who you are
- -  don't give up
- -  you know it's never been easy
- -  don't give up
- -  'cause I believe there's a place
- -  there's a place where we belong
-
-END
-
-      else
-         flash[:alert] = "You are the only one administrator. Choose a heir before leaving."
-      end
+    rescue Exception => e
+        flash[:alert] = e.message
     end
     redirect_to board_index_url
   end
