@@ -1,0 +1,32 @@
+scopes:
+    colegio_salesiano_santo_somingo_savio:
+        primaria:
+            primer_ciclo_de_primaria:
+                primero_de_primaria: {}
+                segundo_de_primaria: {}
+                tercero_de_primaria: {}
+            segundo_ciclo_de_primaria:
+                cuarto_de_primaria: {}
+                quinto_de_primaria: {}
+                sexto_de_primaria: {}
+        secundaria:
+            "E. S. O.":
+                "primer ciclo de la e. s. o.":
+                    "primero de la e. s. o.": {}
+                    "segundo de la e. s. o.": {}
+                "segundo ciclo de la e. s. o.":
+                    "tercero de la e. s. o.": {}
+                    "cuarto de la e. s. o.": {}
+            bachillerato:
+                primero_de_bachillerato: {}
+                segundo_de_bachillerato: {}
+        formación_profesional:
+            "f. p. b.":
+                "primero de f. p. b.": {}
+                "segundo de f. p. b.": {}
+            "c. f. g. m.":
+                "primero de c. f. g. m.": {}
+                "segundo de c. f. g. m.": {}
+            "c. f. g. s.":
+                "primero de c. f. g. s.": {}
+                "segundo de c. f. g. s.": {}
