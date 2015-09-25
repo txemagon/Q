@@ -1,33 +1,11 @@
 require 'yaml'
 require 'highline/import'
 
+require "tasks/db_manager"
+
 POPULATE_DIR = File.join(Rails.root, 'db', 'data')
 
 namespace :db do
-
-  class DbManager
-
-  	def scope(data)
-  		Scope.delete_all
-  		populate_scopes(data)
-  	end
-
-  	def method_missing(method_name, *args)
-  		say "<%= color('Undefined action for <#{method_name}>', :red) %>"
-  	end
-
-  	private
-
-  	def populate_scopes(scope, parent=nil)
-  		scope.each do |name, value|
-  		    record = Scope.create!(
-  		    	:name => name.humanize.split.map(&:capitalize).join(' ') )
-  		    record.move_to_child_of(parent) if parent
-  		    populate_scopes(value, record)
-  		end
-  	end
-
-  end
 
   desc "Populate initial data with yaml files inside db/data."
   task :populate_for => :environment do
