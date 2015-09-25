@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :scopes do
+  resources :areas do
+    collection do
+      get :manage
+      post :rebuild
+    end
+  end
+
+  resources :levels do
     collection do
       get :manage
 

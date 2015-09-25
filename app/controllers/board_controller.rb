@@ -1,6 +1,6 @@
 class BoardController < ApplicationController
+  before_action :check_admin_privileges
   before_action :set_user , only: [:welcome, :banish, :confirm, :destroy]
-  before_action :check_privileges
 
   def index
   	@approved  = User.admins
@@ -46,14 +46,9 @@ class BoardController < ApplicationController
   end
 
   private
+
   def set_user
       @user = User.find(params[:id])
     end
 
-  def check_privileges
-    unless user_signed_in? and current_user.admin?
-      flash[:alert] = "No peeping allowed. Sign in as administrator."
-      redirect_to root_url
-    end
-  end
 end

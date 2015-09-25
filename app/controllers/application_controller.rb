@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :first_name << :last_name << :admin
   end
 
+  def check_admin_privileges
+    unless user_signed_in? and current_user.admin?
+      flash[:alert] = "No peeping allowed. Sign in as administrator."
+      redirect_to root_url
+    end
+  end
+
 end

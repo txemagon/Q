@@ -1,6 +1,6 @@
-class CreateScopes < ActiveRecord::Migration
+class CreateLevels < ActiveRecord::Migration
   def change
-    create_table :scopes do |t|
+    create_table :levels do |t|
       t.string :name
 
       # awesome nested set

@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917192946) do
+ActiveRecord::Schema.define(version: 20150925155431) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft",                        null: false
+    t.integer  "rgt",                        null: false
+    t.integer  "depth",          default: 0, null: false
+    t.integer  "children_count", default: 0, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "areas", ["lft"], name: "index_areas_on_lft"
+  add_index "areas", ["parent_id"], name: "index_areas_on_parent_id"
+  add_index "areas", ["rgt"], name: "index_areas_on_rgt"
+
+  create_table "levels", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft",                        null: false
+    t.integer  "rgt",                        null: false
+    t.integer  "depth",          default: 0, null: false
+    t.integer  "children_count", default: 0, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "levels", ["lft"], name: "index_levels_on_lft"
+  add_index "levels", ["parent_id"], name: "index_levels_on_parent_id"
+  add_index "levels", ["rgt"], name: "index_levels_on_rgt"
 
   create_table "register_models", force: :cascade do |t|
     t.string   "name"
@@ -23,21 +53,6 @@ ActiveRecord::Schema.define(version: 20150917192946) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
   end
-
-  create_table "scopes", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "parent_id"
-    t.integer  "lft",                        null: false
-    t.integer  "rgt",                        null: false
-    t.integer  "depth",          default: 0, null: false
-    t.integer  "children_count", default: 0, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  add_index "scopes", ["lft"], name: "index_scopes_on_lft"
-  add_index "scopes", ["parent_id"], name: "index_scopes_on_parent_id"
-  add_index "scopes", ["rgt"], name: "index_scopes_on_rgt"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

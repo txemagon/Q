@@ -1,0 +1,5 @@
+<%= link_to 'New Level', new_level_path %>
+<ol class="sortable_tree" data-rebuild_url="<%= rebuild_levels_url -%>" >
+  <%=  build_server_tree(@levels, type: :sortable) %>
+</ol>
+<%= link_to 'New Level', new_level_path %>
