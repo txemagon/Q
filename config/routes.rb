@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :acronyms
   resources :areas do
     collection do
       get :manage

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @acronym.key %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @acronym.name %>
+</p>
+
+<p>
+  <strong>Expand:</strong>
+  <%= @acronym.expand %>
+</p>
+
+<%= link_to 'Edit', edit_acronym_path(@acronym) %> |
+<%= link_to 'Back', acronyms_path %>

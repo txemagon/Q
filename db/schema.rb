@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925155431) do
+ActiveRecord::Schema.define(version: 20150928192550) do
+
+  create_table "acronyms", force: :cascade do |t|
+    t.string   "key"
+    t.string   "name"
+    t.string   "expand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "areas", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +35,14 @@ ActiveRecord::Schema.define(version: 20150925155431) do
   add_index "areas", ["lft"], name: "index_areas_on_lft"
   add_index "areas", ["parent_id"], name: "index_areas_on_parent_id"
   add_index "areas", ["rgt"], name: "index_areas_on_rgt"
+
+  create_table "areas_levels", id: false, force: :cascade do |t|
+    t.integer "level_id"
+    t.integer "area_id"
+  end
+
+  add_index "areas_levels", ["area_id"], name: "index_areas_levels_on_area_id"
+  add_index "areas_levels", ["level_id"], name: "index_areas_levels_on_level_id"
 
   create_table "levels", force: :cascade do |t|
     t.string   "name"

@@ -1,7 +1,7 @@
 class CreateLevels < ActiveRecord::Migration
   def change
     create_table :levels do |t|
-      t.string :name
+      t.string :name, unique: true
 
       # awesome nested set
       # compulsory

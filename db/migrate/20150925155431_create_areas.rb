@@ -1,7 +1,7 @@
 class CreateAreas < ActiveRecord::Migration
   def change
     create_table :areas do |t|
-      t.string :name
+      t.string :name, unique: true
 
       # awesome nested set
       # compulsory, :null => false, :default => 0

@@ -1,5 +1,5 @@
 <%= link_to 'New Area', new_area_path %>
 <ol class="sortable_tree" data-rebuild_url="<%= rebuild_areas_url -%>" >
-  <%=  build_server_tree(@areas, type: :sortable) %>
+  <%=  build_server_tree(beautify(@areas), type: :sortable) %>
 </ol>
 <%= link_to 'New Area', new_area_path %>

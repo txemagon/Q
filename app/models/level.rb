@@ -2,6 +2,10 @@ class Level < ActiveRecord::Base
 	acts_as_nested_set
 	include TheSortableTree::Scopes
 
+	has_and_belongs_to_many :areas
+
+    validates :name, uniqueness: true
+
     def title
     	name
     end

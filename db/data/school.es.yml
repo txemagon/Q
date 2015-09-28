@@ -1,3 +1,11 @@
+acronyms:
+    eso: enseñanza_secundaria_obligatoria
+    fpb: formación_profesional_básica
+    cfgm: ciclos_formativos_de_grado_medio
+    cfgs: ciclos_formativos_de_grado_superior
+    dam: derarrollo_de_aplicaciones_multiplataforma
+    tafad: técnico_en_actividades_físico_deportivas
+
 levels:
     colegio_salesiano_santo_somingo_savio:
         primaria:
@@ -10,23 +18,85 @@ levels:
                 quinto_de_primaria: {}
                 sexto_de_primaria: {}
         secundaria:
-            "E. S. O.":
-                "primer ciclo de la e. s. o.":
-                    "primero de la e. s. o.": {}
-                    "segundo de la e. s. o.": {}
-                "segundo ciclo de la e. s. o.":
-                    "tercero de la e. s. o.": {}
-                    "cuarto de la e. s. o.": {}
+            eso:
+                primer_ciclo_de_la_eso:
+                    primero_de_la_eso: {}
+                    segundo_de_la_eso: {}
+                segundo_ciclo_de_la_eso:
+                    tercero_de_la_eso: {}
+                    cuarto_de_la_eso: {}
             bachillerato:
                 primero_de_bachillerato: {}
                 segundo_de_bachillerato: {}
         formación_profesional:
-            "f. p. b.":
-                "primero de f. p. b.": {}
-                "segundo de f. p. b.": {}
-            "c. f. g. m.":
-                "primero de c. f. g. m.": {}
-                "segundo de c. f. g. m.": {}
-            "c. f. g. s.":
-                "primero de c. f. g. s.": {}
-                "segundo de c. f. g. s.": {}
+            fpb:
+                primero_de_fpb: {}
+                segundo_de_fpb: {}
+            cfgm:
+                primero_de_cfgm: {}
+                segundo_de_cfgm: {}
+            cfgs:
+                primero_de_cfgs: {}
+                segundo_de_cfgs: {}
+
+areas:
+    mecánica:
+        mecanizado:
+        - cfgm
+        - fpb
+        soldadura:
+        - cfgm
+        desarrollo_de_productos_mecánicos:
+        - cfgs
+        mantenimiento:
+        - cfgm
+        - cfgs
+        fabricación:
+        - fpb
+    "informática, electricidad y electrónica":
+        dam:
+        - cfgs
+        electricidad:
+        - cfgm
+        - fpb
+        aluminio:
+        - fpb
+        telecomunicaciones:
+        - cfgm
+        - cfgs
+    "administración, infantil y tafad":
+        administración:
+        - fpb
+        infantil:
+        - cfgs
+        tafad:
+        - cfgs
+    ciencias_y_tecnología:
+    - bachillerato
+    humanidades:
+    - bachillerato
+    arte:
+    - bachillerato
+
+# departments:
+#     - inglés
+#     - lengua y literatura
+#     - matemáticas
+#     - filosofía
+#     - mecánica
+#     - administración
+#     - electrónica
+
+# roles:
+#     claustro:
+#         docentes:
+#             profesor: {}
+#             tutor: {}
+#         apoyo:
+#             director: {}
+#             coordinador: {}
+#             jefe_de_departamento: {}
+#             orientador: {}
+#     personal_de_administración_y_servicios:
+#         administrador: {}
+#         secretario: {}

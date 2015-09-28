@@ -31,6 +31,7 @@ namespace :db do
   	end
   end
 
+  # debug purposes
   def show(data, parent=nil)
   	data.each do |key, value|
   		print "#{parent}: " if parent

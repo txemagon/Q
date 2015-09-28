@@ -1,5 +1,5 @@
 namespace :db do
 
-	desc "Drops, migrate and seed database"
+	desc "Drops, migrates and seeds database"
 	task :restart => [:drop, :migrate, :seed, :populate_for]
 end
