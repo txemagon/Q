@@ -20,6 +20,7 @@ module RenderSortableTreeHelper
             <div class='item'>
               <i class='handle'></i>
               #{ show_link }
+              #{ show_relations if options[:linked_with]} 
               #{ controls }
             </div>
             #{ children }
@@ -34,6 +35,18 @@ module RenderSortableTreeHelper
         title_field = options[:title]
 
         "<h4>#{ h.link_to(node.send(title_field), url) }</h4>"
+      end
+
+      def show_relations
+        node = options[:node]
+        relation = options[:linked_with]
+        related_model = relation.to_s.classify.constantize
+        related = node.send(relation)
+        related_model.all.inject("") do |result, rel|
+          result <<  h.check_box_tag('area[level_ids][]', rel.id, related.include?(rel), id: h.dom_id(rel, h.dom_id(node))) << 
+          " " << 
+          (h.label_tag h.dom_id(rel, h.dom_id(node)), rel.name)
+        end        
       end
 
       def controls
