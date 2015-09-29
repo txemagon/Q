@@ -7,7 +7,7 @@
 # or use h.html_escape(node.content)
 # for escape potentially dangerous content
 module RenderSortableTreeHelper
-  module Render 
+  module Render
     class << self
       attr_accessor :h, :options
 
@@ -20,7 +20,7 @@ module RenderSortableTreeHelper
             <div class='item'>
               <i class='handle'></i>
               #{ show_link }
-              #{ show_relations if options[:linked_with]} 
+              #{ show_relations if options[:linked_with]}
               #{ controls }
             </div>
             #{ children }
@@ -42,11 +42,16 @@ module RenderSortableTreeHelper
         relation = options[:linked_with]
         related_model = relation.to_s.classify.constantize
         related = node.send(relation)
-        related_model.all.inject("") do |result, rel|
-          result <<  h.check_box_tag('area[level_ids][]', rel.id, related.include?(rel), id: h.dom_id(rel, h.dom_id(node))) << 
-          " " << 
-          (h.label_tag h.dom_id(rel, h.dom_id(node)), rel.name)
-        end        
+        # related_model.all
+        related.inject("") do |result, rel|
+          result <<  "&nbsp;&nbsp;" <<
+            h.check_box_tag("#{options[:klass].downcase}[#{relation.to_s}_ids][]",
+            rel.id, related.include?(rel),
+            id: h.dom_id(rel, h.dom_id(node)),
+            disabled: true) <<
+          " " <<
+          (h.label_tag h.dom_id(rel, h.dom_id(node)), Formatter.show(rel.name))
+        end
       end
 
       def controls

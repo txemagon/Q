@@ -77,6 +77,6 @@ class LevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def level_params
-      params.require(:level).permit(:name, :parent_id, :lft, :rgt, :depth, :children_count)
+      params.require(:level).permit(:name, :parent_id, :lft, :rgt, :depth, :children_count, {area_ids: []})
     end
 end

@@ -14,4 +14,13 @@ class Area < ActiveRecord::Base
     	return "No Parent" if root?
     	return parent.name
     end
+
+
+    # True if this area is descendant of given area or is the given area.
+    def comes_from? area
+        area = area.to_s if area.is_a? Symbol
+        area = Area.find_by(name: area) if area.is_a? String
+
+        self.self_and_ancestors.include? area
+    end
 end

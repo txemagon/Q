@@ -18,7 +18,17 @@
   <div class="field">
     <%= f.label :parent_id %><br>
     <%#= f.number_field :parent_id %>
-    <%= select_tag "area[parent_id]", nested_options(Area.all, :selected => Area.last), class: :nested_options %>
+    <%= select_tag "area[parent_id]", nested_options(Area.all, :selected => @area.parent), class: :nested_options %>
+  </div>
+
+  <div class="field">
+    <%= hidden_field_tag 'area[level_ids][]', nil %>
+    <% Level.all.each do |level| %>
+        <%= check_box_tag('area[level_ids][]', level.id,
+                      @area.levels.include?(level),
+                      id: dom_id(level) )%>
+        <%= label_tag dom_id(level), pretty(level.name) %><br/>
+    <% end %>
   </div>
 
   <div class="actions">

@@ -23,5 +23,9 @@
   <%= @area.children_count %>
 </p>
 
+<p>
+  <strong>Levels:</strong>
+  <%= show_together @area.levels %>
+</p>
 <%= link_to 'Edit', edit_area_path(@area) %> |
-<%= link_to 'Back', areas_path %>
+<%= link_to 'Back', manage_areas_path %>
