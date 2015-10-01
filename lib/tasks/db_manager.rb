@@ -35,9 +35,10 @@ class DbManager
     # Links the new record with the array of parents.
     def concatenate(model, record, relations)
       relations.each do |r|
+        r = Formatter.sentence r
         say "<%= color('Linking #{ r } with #{ record.name }', :blue, :bold) %>"
          begin
-            level = Level.find_by_name!(r.downcase)
+            level = Level.find_by_name!(r)
             record.levels << level
          rescue Exception => e
            say "<%=  color('Could not find record #{r}', :red, :bold) %>"

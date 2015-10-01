@@ -41,17 +41,27 @@ module RenderSortableTreeHelper
         node = options[:node]
         relation = options[:linked_with]
         related_model = relation.to_s.classify.constantize
-        related = node.send(relation)
+        related = node.send(relation).group_by(&:parent)
         # related_model.all
-        related.inject("") do |result, rel|
-          result <<  "&nbsp;&nbsp;" <<
-            h.check_box_tag("#{options[:klass].downcase}[#{relation.to_s}_ids][]",
-            rel.id, related.include?(rel),
-            id: h.dom_id(rel, h.dom_id(node)),
-            disabled: true) <<
-          " " <<
-          (h.label_tag h.dom_id(rel, h.dom_id(node)), Formatter.show(rel.name))
+        final_string = ""
+        final_string << "<table>"
+        related.each do |category, rel|
+          final_string << "<tr><td>"
+          final_string << "<em> #{h.pretty category.name}: </em>"
+          final_string << "</td><td>"
+          rel.each do |rel|
+              final_string <<  "&nbsp;&nbsp;" <<
+                h.check_box_tag("#{options[:klass].downcase}[#{relation.to_s}_ids][]",
+                rel.id, related.include?(rel),
+                id: h.dom_id(rel, h.dom_id(node)),
+                disabled: true) <<
+              " " <<
+              (h.label_tag h.dom_id(rel, h.dom_id(node)), Formatter.show(rel.name))
+          end
+          final_string << "</td></tr>"
         end
+        final_string << "</table>"
+        final_string
       end
 
       def controls
