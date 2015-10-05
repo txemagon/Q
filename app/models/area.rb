@@ -5,6 +5,13 @@ class Area < ActiveRecord::Base
 	has_and_belongs_to_many :levels
 
     validates :name, uniqueness: true
+    validate :leaf_level
+
+    def leaf_level
+        unless self.leaf?
+            errors.add(:base, 'Only terminal areas can be linked to levels' )
+        end
+    end
 
     def title
     	name

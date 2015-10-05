@@ -1,11 +1,14 @@
 module GeneralTreeHelper
 
-	def show_checkbox category, related
+	def show_checkbox category, related, options = {}
+		op_list = { id: dom_id(related) }
+		op_list.merge! options if options.any?
+
 		category_name = category.class.name.underscore
 		related_name = related.class.name.underscore
          check_box_tag("#{category_name}[#{related_name}_ids][]", related.id,
                            category.send(related_name.pluralize).include?(related),
-                           id: dom_id(related) ) +
+                           op_list) +
          label_tag(dom_id(related), pretty(related.name))
 	end
 

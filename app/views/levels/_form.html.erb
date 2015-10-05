@@ -15,6 +15,7 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :parent_id %><br>
     <%#= f.collection_select :parent_id, Level.all, :id, :name %>
@@ -25,7 +26,7 @@
   <h3> Related Areas </h3>
   <%= hidden_field_tag 'level[area_ids][]', nil %>
     <%= traverse_tree(Area.roots) do |area| %>
-          <%= show_checkbox(@level, area) %> <br/>
+          <%= show_checkbox(@level, area, disabled: !area.leaf?) %> <br/>
     <% end %>
   </div>
 

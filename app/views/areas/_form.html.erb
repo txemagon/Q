@@ -25,7 +25,7 @@
   <h3>Related Levels</h3>
     <%= hidden_field_tag 'area[level_ids][]', nil %>
     <%= traverse_tree(Level.roots) do |level| %>
-          <%= show_checkbox(@area, level) %> <br/>
+          <%= show_checkbox(@area, level, disabled: !level.leaf?) %> <br/>
     <% end %>
   </div>
 
