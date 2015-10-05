@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>
-  <%= @area.name %>
-  </strong>
-
+  <h2>
+     <%= pretty @area.name %>
+  </h2>
   <em>
   ( Depth:
      <%= @area.depth %>
@@ -14,14 +13,20 @@
 
 <p>
   <strong>Parent:</strong>
-  <%= @area.parent_name %>
+  <%= pretty @area.parent_name %>
 </p>
 
 
-<p>
-  <strong>Children count:</strong>
-  <%= @area.children_count %>
-</p>
+<% if @area.children.count != 0 %>
+  <p>
+    <strong>
+    Children
+    ( <%= @area.children.count %>): </strong>
+    <br/>
+    <em> <%= show_together @area.children %></em>
+  </p>
+
+<% end %>
 
 <p>
   <strong>Levels:</strong>

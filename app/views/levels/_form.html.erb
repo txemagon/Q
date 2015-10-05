@@ -18,10 +18,11 @@
   <div class="field">
     <%= f.label :parent_id %><br>
     <%#= f.collection_select :parent_id, Level.all, :id, :name %>
-    <%= select_tag "level[parent_id]", nested_options(Level.all, :selected => @level.parent), class: :nested_options %>
+    <%= select_tag "level[parent_id]", nested_options(Level.all, :selected => @level.parent), class: :nested_options, include_blank: true %>
   </div>
 
   <div class="field">
+  <h3> Related Areas </h3>
   <%= hidden_field_tag 'level[area_ids][]', nil %>
     <%= traverse_tree(Area.roots) do |area| %>
           <%= show_checkbox(@level, area) %> <br/>

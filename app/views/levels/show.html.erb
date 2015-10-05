@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= @level.name %></strong>
+  <h2><%= pretty @level.name %></h2>
 
   <em>
   (
@@ -14,13 +14,19 @@
 
 <p>
   <strong>Belongs to:</strong>
-  <%= @level.parent_name %>
+  <%= pretty @level.parent_name %>
 </p>
 
-<p>
-  <strong>Children count:</strong>
-  <%= @level.children_count %>
-</p>
+<% if @level.children.count != 0 %>
+  <p>
+    <strong>
+    Children
+    ( <%= @level.children.count %>): </strong>
+    <br/>
+    <em> <%= show_together @level.children %></em>
+  </p>
+
+<% end %>
 
 <p>
   <strong>Areas:</strong>
