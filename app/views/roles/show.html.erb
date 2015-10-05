@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<h2><%= pretty @role.name %></h2>
+
+  <em>
+  (
+  level
+  <%= @role.depth %>
+  )
+  </em>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @role.parent_name %>
+</p>
+
+<% if @role.children.count != 0 %>
+<p>
+  <strong>Children (<%= @role.children.count %>): </strong>
+  <em> <%= show_together @role.children %></em>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_role_path(@role) %> |
+<%= link_to 'Back', manage_roles_path %>

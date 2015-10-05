@@ -23,7 +23,7 @@ class DbManager
 
   	def method_missing(method_name, *args)
       table = method_name.to_s
-      if %{area level department}.include? table
+      if %{area level department role}.include? table
         populate(eval(table.capitalize), *args)
       else
   		  say "<%= color('Dont know what to do with <#{table}>.', :red) %>"

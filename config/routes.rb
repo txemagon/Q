@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :roles do
+    collection do
+      get :manage
+      post :rebuild
+    end
+  end
   resources :departments
   resources :acronyms
   resources :areas do

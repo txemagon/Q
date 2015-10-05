@@ -1,0 +1,5 @@
+<%= link_to 'New Role', new_role_path %>
+<ol class="sortable_tree" data-rebuild_url="<%= rebuild_roles_url -%>" >
+  <%=  build_server_tree(beautify(@roles), type: :sortable) %>
+</ol>
+<%= link_to 'New Role', new_role_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005214913) do
+ActiveRecord::Schema.define(version: 20151005220901) do
 
   create_table "acronyms", force: :cascade do |t|
     t.string   "key"
@@ -77,6 +77,21 @@ ActiveRecord::Schema.define(version: 20151005214913) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
   end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft",                        null: false
+    t.integer  "rgt",                        null: false
+    t.integer  "depth",          default: 0, null: false
+    t.integer  "children_count", default: 0, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "roles", ["lft"], name: "index_roles_on_lft"
+  add_index "roles", ["parent_id"], name: "index_roles_on_parent_id"
+  add_index "roles", ["rgt"], name: "index_roles_on_rgt"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
