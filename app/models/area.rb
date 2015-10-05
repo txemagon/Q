@@ -1,3 +1,5 @@
+require 'formatter'
+
 class Area < ActiveRecord::Base
 	acts_as_nested_set
 	include TheSortableTree::Scopes
@@ -8,8 +10,8 @@ class Area < ActiveRecord::Base
     validate :leaf_level
 
     def leaf_level
-        unless self.leaf?
-            errors.add(:base, 'Only terminal areas can be linked to levels' )
+        if levels.any? and  !self.leaf?
+            errors.add(:base, "Only terminal areas can be linked to levels. #{Formatter.show name} is not terminal." )
         end
     end
 

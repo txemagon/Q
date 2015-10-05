@@ -93,26 +93,26 @@ areas:
         - segundo_ciclo_de_primaria
 
 
-# departments:
-#     - inglés
-#     - lengua y literatura
-#     - matemáticas
-#     - filosofía
-#     - mecánica
-#     - administración
-#     - electrónica
+departments:
+    - inglés
+    - lengua y literatura
+    - matemáticas
+    - filosofía
+    - mecánica
+    - administración
+    - electrónica
 
-# roles:
-#     personal:
-#         claustro:
-#             docentes:
-#                 profesor: {}
-#                 tutor: {}
-#             apoyo:
-#                 director: {}
-#                 coordinador: {}
-#                 jefe_de_departamento: {}
-#                 orientador: {}
-#         personal_de_administración_y_servicios:
-#             administrador: {}
-#             secretario: {}
+roles:
+    personal:
+        claustro:
+            docentes:
+                profesor: {}
+                tutor: {}
+            apoyo:
+                director: {}
+                coordinador: {}
+                jefe_de_departamento: {}
+                orientador: {}
+        personal_de_administración_y_servicios:
+            administrador: {}
+            secretario: {}
